@@ -1,26 +1,54 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { LanguageProvider } from "@/components/LanguageProvider";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/sections/Hero";
+import { About } from "@/sections/About";
+import { Skills } from "@/sections/Skills";
+import { Experience } from "@/sections/Experience";
+import { Projects } from "@/sections/Projects";
+import { Education } from "@/sections/Education";
+import { Why } from "@/sections/Why";
+import { Contact } from "@/sections/Contact";
+import { Footer } from "@/sections/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Houssein GHANNOUM — Développeur Full-Stack Java / React" },
+      {
+        name: "description",
+        content:
+          "Portfolio de Houssein GHANNOUM, ingénieur logiciel et développeur Full-Stack Java / React. Disponible pour CDI, freelance et missions en France.",
+      },
+      { property: "og:title", content: "Houssein GHANNOUM — Full-Stack Java / React" },
+      { property: "og:description", content: "Ingénieur logiciel spécialisé Java Spring Boot, React, Python, Docker et CI/CD." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <ThemeProvider>
+      <LanguageProvider>
+        <div className="min-h-screen bg-background text-foreground">
+          <Navbar />
+          <main>
+            <Hero />
+            <About />
+            <Skills />
+            <Experience />
+            <Projects />
+            <Education />
+            <Why />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </LanguageProvider>
+    </ThemeProvider>
+  );
 }
