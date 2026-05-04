@@ -1,0 +1,175 @@
+export const ar = {
+  nav: {
+    about: "نبذة",
+    skills: "المهارات",
+    experience: "الخبرات",
+    projects: "المشاريع",
+    education: "التعليم",
+    contact: "تواصل",
+  },
+  hero: {
+    available: "متاح للعمل الدائم أو الحر في فرنسا",
+    name: "حسين غنوم",
+    title: "مطوّر Full-Stack بـ Java و React",
+    subtitle: "مهندس برمجيات",
+    tagline1: "مطوّر Full-Stack بـ Java و React، شغوف ببناء تطبيقات ويب حديثة وقوية وجاهزة للإنتاج.",
+    tagline2: "مهندس برمجيات مبتدئ متخصص في Java Spring Boot وReact وPython، مع خبرة عملية في REST API وDocker وCI/CD ونشر VPS.",
+    cta: { projects: "مشاهدة مشاريعي", cv: "تحميل السيرة الذاتية", contact: "تواصل معي" },
+  },
+  about: {
+    title: "نبذة عني",
+    subtitle: "مهندس برمجيات بعقلية المنتج",
+    p1: "خرّيج هندسة من ISEN Yncréa Ouest، أصمّم وأطلق تطبيقات كاملة — من واجهة React إلى الـ backend بـ Java/Python، حتى النشر في الإنتاج على VPS مع Docker وCI/CD.",
+    p2: "اكتسبت خبرة فعلية عبر التدريب المهني والتربصات في مشاريع متنوعة: SaaS وتطبيقات أعمال وتطبيقات أندرويد وواجهات دفع آمنة.",
+    p3: "هدفي: بناء منتجات تقنية متينة وفعّالة ومفيدة باستقلالية عالية وحس منتج حقيقي.",
+    points: [
+      "شهادة هندسة من ISEN Yncréa Ouest",
+      "خبرة في التدريب المهني والتربصات",
+      "Full-stack: واجهة، خلفية، موبايل، DevOps",
+      "خبرة في النشر للإنتاج (Docker وVPS وCI/CD)",
+    ],
+  },
+  skills: {
+    title: "المهارات التقنية",
+    subtitle: "مجموعة أدوات حديثة، من الكود إلى الإنتاج",
+    cats: {
+      lang: "اللغات",
+      front: "الواجهة الأمامية",
+      back: "الخلفية",
+      db: "قواعد البيانات",
+      mobile: "الموبايل",
+      devops: "DevOps والنشر",
+      tools: "الأدوات",
+    },
+  },
+  experience: {
+    title: "الخبرات المهنية",
+    subtitle: "مسيرتي في الشركات",
+    techs: "التقنيات",
+    items: [
+      {
+        company: "SEZAIA",
+        role: "متدرّب مطوّر موبايل وويب",
+        period: "10/2024 – 09/2025",
+        location: "بريست",
+        bullets: [
+          "تطوير حل متكامل لخدمة ما بعد البيع (تطبيق أندرويد Kotlin وواجهة ويب React)",
+          "إنشاء REST API بـ Flask مرتبطة بـ MySQL",
+          "وضع رموز QR فريدة لتعريف المنتجات",
+          "نشر الـ API والواجهة وقاعدة البيانات على VPS IONOS",
+          "التعاون مع الفرق التشغيلية لتحسين متابعة شكاوى العملاء",
+        ],
+      },
+      {
+        company: "CAASHPAY",
+        role: "متربّص مطوّر Java",
+        period: "06/2024 – 09/2024",
+        location: "باريس",
+        bullets: [
+          "تطوير REST API دفع آمنة بلغة Java",
+          "العمل على بروتوكول CB2A ومعيار ISO8583",
+          "إنشاء محاكي بنك تحصيل بـ Python",
+          "تخزين العمليات المحاكاة في MongoDB",
+          "اختبارات تكامل عبر Postman",
+        ],
+      },
+    ],
+  },
+  projects: {
+    title: "المشاريع",
+    subtitle: "أعمال مختارة منشورة في الإنتاج",
+    visit: "عرض المشروع",
+    featured: "مميّز",
+    items: {
+      orderhub: {
+        name: "OrderHub",
+        type: "منصة SaaS لإدارة الطلبات",
+        period: "04/2026 – حتى الآن",
+        desc: "تطبيق SaaS متكامل يجمع الطلبات من قنوات مثل WhatsApp وInstagram. بنية React + Spring Boot، مصادقة JWT، نشر بـ Docker على VPS مع CI/CD عبر GitHub Actions.",
+      },
+      beyrouthine: {
+        name: "مطعم La Beyrouthine",
+        type: "موقع متكامل لمطعم",
+        period: "02/2026 – 03/2026",
+        desc: "تطبيق ويب متكامل بقائمة ديناميكية ونظام حجز آلي عبر البريد ولوحة تحكم. خلفية Spring Boot وقاعدة PostgreSQL ونشر Docker على VPS.",
+      },
+      sezaia: {
+        name: "حل SEZAIA لخدمة العملاء",
+        type: "تطبيق أعمال موبايل وويب",
+        period: "2024 – 2025",
+        desc: "حل احترافي لإدارة شكاوى العملاء يضم تطبيق أندرويد Kotlin وواجهة ويب React وREST API بـ Flask وقاعدة MySQL ونظام رموز QR.",
+      },
+      caashpay: {
+        name: "واجهة دفع CAASHPAY",
+        type: "خلفية دفع آمنة",
+        period: "2024",
+        desc: "REST API دفع آمنة متوافقة مع بروتوكول CB2A ومعيار ISO8583، مع محاكي بنك تحصيل بـ Python وإدارة العمليات بـ MongoDB.",
+      },
+    },
+    secondary: {
+      title: "مشاريع أخرى",
+      items: [
+        { name: "موقع تجارة إلكترونية", desc: "موقع تجارة إلكترونية بـ AngularJS وBootstrap." },
+        { name: "إدارة عن بُعد لبيت زجاجي ISEN", desc: "إدارة ري بيت زجاجي عن بُعد باستخدام أدوات GCE Electronics." },
+      ],
+    },
+  },
+  education: {
+    title: "التعليم",
+    subtitle: "المسار الأكاديمي",
+    items: [
+      {
+        school: "ISEN Yncréa Ouest",
+        degree: "شهادة مهندس عام — تخصص تطوير البرمجيات",
+        period: "09/2023 – 09/2025",
+        location: "بريست، فرنسا",
+      },
+      {
+        school: "الجامعة اللبنانية — كلية التكنولوجيا",
+        degree: "إجازة في هندسة شبكات الحاسوب والاتصالات",
+        period: "09/2018 – 06/2021",
+        location: "صيدا، لبنان",
+      },
+    ],
+  },
+  languages: {
+    title: "اللغات",
+    items: [
+      { name: "الفرنسية", level: "بطلاقة" },
+      { name: "الإنجليزية", level: "بطلاقة — TOEIC 850/990" },
+      { name: "العربية", level: "اللغة الأم" },
+    ],
+  },
+  why: {
+    title: "لماذا تختارني؟",
+    subtitle: "ملف متكامل ومستقل وموجّه نحو المنتج",
+    items: [
+      { title: "تطبيقات متكاملة", desc: "قدرة على البناء من الألف إلى الياء: واجهة وخلفية وموبايل ونشر." },
+      { title: "Full-stack متين", desc: "Java Spring Boot وReact وPython وDocker وCI/CD وقواعد SQL/NoSQL." },
+      { title: "حس منتج", desc: "تجربة فعلية في مشاريع SaaS وتطبيقات أعمال في الإنتاج." },
+      { title: "استقلالية تقنية", desc: "اعتاد على قيادة المشاريع من التحليل إلى النشر على VPS." },
+    ],
+  },
+  stack: {
+    title: "أدواتي المفضّلة",
+    subtitle: "ما أستخدمه يوميًا",
+  },
+  availability: {
+    title: "التوفر",
+    desc: "متاح لعقود دائمة أو مهام حرة كمطوّر Full-Stack Java/React أو Backend Python أو Android Kotlin — في كل أنحاء فرنسا، حضوريًا أو هجينًا أو عن بُعد.",
+  },
+  contact: {
+    title: "تواصل",
+    subtitle: "لنتحدث عن مشروعك",
+    email: "إرسال بريد",
+    linkedin: "تواصل عبر LinkedIn",
+    call: "اتصال",
+    whatsapp: "واتساب",
+    cvFr: "CV بالفرنسية",
+    cvEn: "Resume بالإنجليزية",
+  },
+  footer: {
+    rights: "جميع الحقوق محفوظة.",
+    built: "صُمّم وطُوّر بشغف.",
+  },
+};
