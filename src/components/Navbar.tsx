@@ -15,7 +15,6 @@ const navItems = [
 const langs = [
   { code: "fr", label: "FR" },
   { code: "en", label: "EN" },
-  { code: "ar", label: "AR" },
 ];
 
 export function Navbar() {
