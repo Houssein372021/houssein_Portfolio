@@ -6,8 +6,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    const dir = i18n.language === "ar" ? "rtl" : "ltr";
-    document.documentElement.dir = dir;
+    document.documentElement.dir = "ltr";
     document.documentElement.lang = i18n.language;
     localStorage.setItem("lang", i18n.language);
   }, [i18n.language]);
