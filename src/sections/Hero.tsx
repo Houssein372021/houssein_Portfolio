@@ -3,11 +3,13 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, Github, Linkedin, MapPin, Sparkles } from "lucide-react";
 import avatar from "@/assets/avatar.jpg";
 import { contactInfo } from "@/data/portfolio";
+import { withBasePath } from "@/lib/public-path";
 
 export function Hero() {
   const { t, i18n } = useTranslation();
-  const cvHref =
-    i18n.language === "en" ? "/cv/Houssein_Ghannoum_CV_EN.pdf" : "/cv/Houssein_Ghannoum_CV_FR.pdf";
+  const cvHref = withBasePath(
+    i18n.language === "en" ? "/cv/Houssein_Ghannoum_CV_EN.pdf" : "/cv/Houssein_Ghannoum_CV_FR.pdf",
+  );
 
   return (
     <section

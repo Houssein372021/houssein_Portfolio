@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { GraduationCap, MapPin, Calendar, ExternalLink } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { withBasePath } from "@/lib/public-path";
 
 type EduItem = { school: string; degree: string; period: string; location: string };
 type LangItem = {
@@ -70,7 +71,7 @@ export function Education() {
                   </div>
                   {l.certificateHref ? (
                     <a
-                      href={l.certificateHref}
+                      href={withBasePath(l.certificateHref)}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors whitespace-nowrap"
