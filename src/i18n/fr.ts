@@ -1,6 +1,6 @@
 export const fr = {
   nav: {
-    about: "test a propors de moi",
+    about: "À propos",
     skills: "Compétences",
     experience: "Expériences",
     projects: "Projets",
