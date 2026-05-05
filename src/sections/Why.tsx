@@ -1,5 +1,13 @@
 import { useTranslation } from "react-i18next";
-import { Rocket, Layers, Target, Zap, BriefcaseBusiness, MapPin, MonitorSmartphone } from "lucide-react";
+import {
+  Rocket,
+  Layers,
+  Target,
+  Zap,
+  BriefcaseBusiness,
+  MapPin,
+  MonitorSmartphone,
+} from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { favoriteStack } from "@/data/portfolio";
 

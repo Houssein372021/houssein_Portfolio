@@ -8,7 +8,7 @@ export const fr = {
     contact: "Contact",
   },
   hero: {
-    available: "Disponible pour CDI / Freelance en France",
+    available: "Disponible pour CDI en France",
     name: "Houssein GHANNOUM",
     title: "Développeur Full-Stack Java / React",
     subtitle: "Ingénieur Logiciel",
@@ -17,6 +17,7 @@ export const fr = {
     tagline2:
       "Ingénieur logiciel junior spécialisé en Java Spring Boot, React et Python, avec une expérience concrète en API REST, Docker, CI/CD et déploiement VPS.",
     cta: { projects: "Voir mes projets", cv: "Télécharger mon CV", contact: "Me contacter" },
+    badge: "Ingénieur Full-Stack",
   },
   about: {
     title: "À propos",
@@ -55,11 +56,11 @@ export const fr = {
         period: "10/2024 – 09/2025",
         location: "Brest",
         bullets: [
-          "Développement d'une solution SAV complète (Android Kotlin + interface web React)",
-          "Création d'une API REST Flask connectée à MySQL",
-          "Mise en place de QR codes uniques pour l'identification des produits",
-          "Déploiement de l'API, du frontend et de la base sur VPS IONOS",
-          "Collaboration avec les équipes métier pour le suivi des incidents clients",
+          "Développement d’une solution SAV complète comprenant une application Android (Kotlin) et une interface web React pour la gestion des incidents clients.",
+          "Conception et développement d’une API REST avec Flask (Python) connectée à une base MySQL.",
+          "Implémentation d’un système de QR codes uniques permettant l’identification des produits et le suivi des incidents.",
+          "Déploiement de l’application (frontend, API, base de données) sur un serveur IONOS avec configuration de l’infrastructure.",
+          "Collaboration avec les équipes métiers pour améliorer les processus de suivi client.",
         ],
       },
       {
@@ -68,11 +69,10 @@ export const fr = {
         period: "06/2024 – 09/2024",
         location: "Paris",
         bullets: [
-          "Développement d'une API REST de paiement sécurisée en Java",
-          "Travail sur le protocole CB2A et la norme ISO8583",
-          "Création d'un simulateur de banque acquéreur en Python",
-          "Stockage des transactions simulées avec MongoDB",
-          "Tests d'intégration avec Postman",
+          "Développement d’une API REST de paiement sécurisée conforme au protocole CB2A et à la norme ISO8583 en Java.",
+          "Conception d’un simulateur de banque acquéreur en Python pour tester les flux de paiement.",
+          "Mise en place du stockage des données avec MongoDB.",
+          "Réalisation de tests d’intégration et simulation de terminaux de paiement avec Postman.",
         ],
       },
     ],

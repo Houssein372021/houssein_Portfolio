@@ -158,7 +158,7 @@ export function Hero() {
           >
             <div className="flex items-center gap-2 text-sm font-medium">
               <Sparkles className="w-4 h-4 text-accent animate-pulse" />
-              Full-Stack Engineer
+              {t("hero.badge")}
             </div>
           </motion.div>
         </motion.div>

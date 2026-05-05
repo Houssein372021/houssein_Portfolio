@@ -8,7 +8,7 @@ export const en = {
     contact: "Contact",
   },
   hero: {
-    available: "Available for full-time / freelance in France",
+    available: "Available for full-time in France",
     name: "Houssein GHANNOUM",
     title: "Full-Stack Java / React Developer",
     subtitle: "Software Engineer",
@@ -17,6 +17,7 @@ export const en = {
     tagline2:
       "Junior software engineer specialized in Java Spring Boot, React and Python, with hands-on experience in REST APIs, Docker, CI/CD and VPS deployment.",
     cta: { projects: "View my projects", cv: "Download my resume", contact: "Contact me" },
+    badge: "Full-Stack Engineer",
   },
   about: {
     title: "About",
@@ -55,11 +56,11 @@ export const en = {
         period: "10/2024 – 09/2025",
         location: "Brest",
         bullets: [
-          "Built a complete after-sales solution (Android Kotlin + React web app)",
-          "Developed a REST API in Flask connected to MySQL",
-          "Implemented unique QR codes for product identification",
-          "Deployed API, frontend and database on IONOS VPS",
-          "Worked with business teams to improve customer issue tracking",
+          "Developed a complete after-sales solution including an Android app (Kotlin) and a React web interface for customer incident management.",
+          "Designed and developed a REST API with Flask (Python) connected to a MySQL database.",
+          "Implemented a unique QR code system for product identification and incident tracking.",
+          "Deployed the application (frontend, API, database) on an IONOS server with infrastructure configuration.",
+          "Collaborated with business teams to improve customer follow-up processes.",
         ],
       },
       {
@@ -68,11 +69,10 @@ export const en = {
         period: "06/2024 – 09/2024",
         location: "Paris",
         bullets: [
-          "Built a secure REST payment API in Java",
-          "Worked on CB2A protocol and ISO8583 standard",
-          "Created a Python acquiring bank simulator",
-          "Stored simulated transactions with MongoDB",
-          "Integration testing with Postman",
+          "Developed a secure REST payment API in Java compliant with the CB2A protocol and ISO8583 standard.",
+          "Designed a Python acquiring bank simulator to test payment flows.",
+          "Implemented data storage with MongoDB.",
+          "Performed integration testing and payment terminal simulations with Postman.",
         ],
       },
     ],
