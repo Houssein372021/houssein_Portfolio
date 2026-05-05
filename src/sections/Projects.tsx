@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { ArrowUpRight, Star, Folder } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { Tilt } from "@/components/Tilt";
 import { projectTechs, projectLinks } from "@/data/portfolio";
 
 const keys = ["orderhub", "beyrouthine", "sezaia", "caashpay"] as const;
@@ -24,40 +25,46 @@ export function Projects() {
             const link = (projectLinks as Record<string, string | undefined>)[k];
             const featured = i < 2;
             return (
-              <Reveal key={k} delay={i * 0.08}>
-                <article className={`group relative h-full p-6 sm:p-8 rounded-2xl border bg-card transition-all hover:shadow-card-premium ${
-                  featured ? "border-primary/40 hover:border-primary" : "border-border hover:border-primary/40"
-                }`}>
-                  {featured && (
-                    <div className="absolute top-5 end-5 inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gradient-hero text-primary-foreground text-xs font-semibold shadow-glow">
-                      <Star className="w-3 h-3" /> {t("projects.featured")}
+              <Reveal key={k} delay={i * 0.1} direction={i % 2 === 0 ? "left" : "right"}>
+                <Tilt className="h-full">
+                  <article className={`group relative h-full p-6 sm:p-8 rounded-2xl border bg-card card-hover overflow-hidden ${
+                    featured ? "border-primary/40 hover:border-primary hover:shadow-glow" : "border-border hover:border-primary/40 hover:shadow-card-premium"
+                  }`}>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                      <div className="absolute -inset-1 bg-gradient-hero opacity-10 blur-2xl" />
                     </div>
-                  )}
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                    <Folder className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold">{item.name}</h3>
-                  <p className="text-sm text-primary font-medium mt-1">{item.type}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{item.period}</p>
-                  <p className="mt-4 text-muted-foreground leading-relaxed">{item.desc}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {projectTechs[k].map((tech) => (
-                      <span key={tech} className="px-2.5 py-1 text-xs font-medium rounded-md bg-muted border border-border">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  {link && (
-                    <a
-                      href={link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all"
-                    >
-                      {t("projects.visit")} <ArrowUpRight className="w-4 h-4" />
-                    </a>
-                  )}
-                </article>
+                    {featured && (
+                      <div className="absolute top-5 end-5 inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gradient-hero text-primary-foreground text-xs font-semibold shadow-glow">
+                        <Star className="w-3 h-3" /> {t("projects.featured")}
+                      </div>
+                    )}
+                    <div className="relative w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:rotate-6 transition-all duration-500">
+                      <Folder className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="relative text-xl sm:text-2xl font-bold">{item.name}</h3>
+                    <p className="relative text-sm text-primary font-medium mt-1">{item.type}</p>
+                    <p className="relative text-xs text-muted-foreground mt-1">{item.period}</p>
+                    <p className="relative mt-4 text-muted-foreground leading-relaxed">{item.desc}</p>
+                    <div className="relative mt-5 flex flex-wrap gap-2">
+                      {projectTechs[k].map((tech) => (
+                        <span key={tech} className="px-2.5 py-1 text-xs font-medium rounded-md bg-muted border border-border transition-all hover:bg-primary/10 hover:border-primary/40 hover:-translate-y-0.5">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    {link && (
+                      <a
+                        href={link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary group/link"
+                      >
+                        <span className="underline-grow">{t("projects.visit")}</span>
+                        <ArrowUpRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+                      </a>
+                    )}
+                  </article>
+                </Tilt>
               </Reveal>
             );
           })}

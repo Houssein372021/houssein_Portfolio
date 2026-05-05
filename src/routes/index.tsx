@@ -11,6 +11,9 @@ import { Education } from "@/sections/Education";
 import { Why } from "@/sections/Why";
 import { Contact } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { CursorGlow } from "@/components/CursorGlow";
+import { motion } from "framer-motion";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,9 +37,15 @@ function Index() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <div className="min-h-screen bg-background text-foreground">
+        <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+          <ScrollProgress />
+          <CursorGlow />
           <Navbar />
-          <main>
+          <motion.main
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <Hero />
             <About />
             <Skills />
@@ -45,7 +54,7 @@ function Index() {
             <Education />
             <Why />
             <Contact />
-          </main>
+          </motion.main>
           <Footer />
         </div>
       </LanguageProvider>

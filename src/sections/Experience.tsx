@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import { Briefcase, MapPin, Calendar } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { experienceTechs } from "@/data/portfolio";
@@ -18,15 +19,26 @@ export function Experience() {
         </Reveal>
 
         <div className="mt-14 relative">
-          <div className="absolute start-4 sm:start-6 top-2 bottom-2 w-px bg-border" />
+          <motion.div
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            style={{ transformOrigin: "top" }}
+            className="absolute start-4 sm:start-6 top-2 bottom-2 w-px bg-gradient-to-b from-primary via-accent to-transparent"
+          />
           <div className="space-y-10">
             {items.map((exp, i) => (
-              <Reveal key={i} delay={i * 0.1}>
-                <div className="relative ps-12 sm:ps-20">
-                  <div className="absolute start-0 sm:start-2 top-1 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow">
+              <Reveal key={i} delay={i * 0.12} direction="right">
+                <div className="relative ps-12 sm:ps-20 group">
+                  <motion.div
+                    whileHover={{ scale: 1.2, rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                    className="absolute start-0 sm:start-2 top-1 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow"
+                  >
                     <Briefcase className="w-4 h-4 text-primary-foreground" />
-                  </div>
-                  <div className="p-6 sm:p-8 rounded-2xl border border-border bg-card hover:border-primary/40 hover:shadow-card-premium transition-all">
+                  </motion.div>
+                  <div className="p-6 sm:p-8 rounded-2xl border border-border bg-card card-hover hover:border-primary/40 hover:shadow-card-premium">
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
                       <div>
                         <h3 className="text-xl sm:text-2xl font-bold">{exp.company}</h3>
