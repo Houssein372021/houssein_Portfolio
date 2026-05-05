@@ -10,9 +10,17 @@ export function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden">
-      <div className="absolute inset-0 grid-bg opacity-40" />
-      <div className="absolute top-1/3 -end-20 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px]" />
-      <div className="absolute bottom-0 -start-20 w-[400px] h-[400px] rounded-full bg-accent/20 blur-[120px]" />
+      <div className="absolute inset-0 animated-grid opacity-60" />
+      <motion.div
+        animate={{ scale: [1, 1.15, 1], x: [0, 30, 0], y: [0, -20, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/3 -end-20 w-[500px] h-[500px] rounded-full bg-primary/25 blur-[120px]"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.2, 1], x: [0, -25, 0], y: [0, 30, 0] }}
+        transition={{ duration: 17, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-0 -start-20 w-[400px] h-[400px] rounded-full bg-accent/25 blur-[120px]"
+      />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center w-full">
         <div>
@@ -103,16 +111,35 @@ export function Hero() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ opacity: 0, scale: 0.85, rotate: -6 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto"
         >
-          <div className="absolute -inset-6 bg-gradient-hero rounded-3xl blur-2xl opacity-40" />
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden border-4 border-card shadow-glow">
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="absolute -inset-6 bg-gradient-hero rounded-3xl blur-2xl opacity-40"
+          />
+          <motion.div
+            whileHover={{ scale: 1.04, rotate: 2 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden border-4 border-card shadow-glow animate-float-slow"
+          >
             <img src={avatar} alt="Houssein GHANNOUM" width={512} height={512} className="w-full h-full object-cover" />
-          </div>
-          <div className="absolute -bottom-4 -end-4 glass border border-border rounded-2xl px-4 py-3 shadow-card-premium">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.6 }}
+            className="absolute -bottom-4 -end-4 glass border border-border rounded-2xl px-4 py-3 shadow-card-premium"
+          >
+            <div className="flex items-center gap-2 text-sm font-medium">
+              <Sparkles className="w-4 h-4 text-accent animate-pulse" />
+              Full-Stack Engineer
+            </div>
+          </motion.div>
+        </motion.div>
             <div className="flex items-center gap-2 text-sm font-medium">
               <Sparkles className="w-4 h-4 text-accent" />
               Full-Stack Engineer
