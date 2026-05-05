@@ -10,7 +10,11 @@ export function Contact() {
     { icon: Mail, label: t("contact.email"), href: `mailto:${contactInfo.email}`, primary: true },
     { icon: Linkedin, label: t("contact.linkedin"), href: contactInfo.linkedin },
     { icon: Phone, label: t("contact.call"), href: `tel:${contactInfo.phone}` },
-    { icon: MessageCircle, label: t("contact.whatsapp"), href: `https://wa.me/${contactInfo.whatsapp}` },
+    {
+      icon: MessageCircle,
+      label: t("contact.whatsapp"),
+      href: `https://wa.me/${contactInfo.whatsapp}`,
+    },
   ];
 
   return (
@@ -18,12 +22,18 @@ export function Contact() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <Reveal>
-          <p className="text-sm font-semibold text-primary uppercase tracking-wider">{t("contact.title")}</p>
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider">
+            {t("contact.title")}
+          </p>
           <h2 className="mt-2 text-3xl sm:text-5xl font-bold">{t("contact.subtitle")}</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            <a href={`mailto:${contactInfo.email}`} className="hover:text-primary">{contactInfo.email}</a>
+            <a href={`mailto:${contactInfo.email}`} className="hover:text-primary">
+              {contactInfo.email}
+            </a>
             <span className="mx-3">•</span>
-            <a href={`tel:${contactInfo.phone}`} className="hover:text-primary">{contactInfo.phoneDisplay}</a>
+            <a href={`tel:${contactInfo.phone}`} className="hover:text-primary">
+              {contactInfo.phoneDisplay}
+            </a>
           </p>
         </Reveal>
 

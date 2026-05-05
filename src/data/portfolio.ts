@@ -14,20 +14,44 @@ export const experienceTechs = [
 ];
 
 export const projectTechs = {
-  orderhub: ["React", "TypeScript", "Spring Boot", "PostgreSQL", "Docker", "Nginx", "GitHub Actions", "VPS IONOS"],
-  beyrouthine: ["React", "TypeScript", "Tailwind CSS", "Java", "Spring Boot", "PostgreSQL", "Docker"],
+  orderhub: [
+    "React",
+    "TypeScript",
+    "Spring Boot",
+    "PostgreSQL",
+    "Docker",
+    "Nginx",
+    "GitHub Actions",
+    "VPS IONOS",
+  ],
+  beyrouthine: [
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Java",
+    "Spring Boot",
+    "PostgreSQL",
+    "Docker",
+  ],
   sezaia: ["Kotlin", "React", "Python", "Flask", "MySQL", "VPS IONOS"],
   caashpay: ["Java", "Python", "MongoDB", "ISO8583", "PCI-DSS", "Postman"],
 };
 
 export const projectLinks = {
   orderhub: "https://orderhubly.com",
-  beyrouthine: "https://la-beyrouthine.fr",
+  beyrouthine: "https://labeiruthine.fr/",
 };
 
 export const favoriteStack = [
-  "React", "TypeScript", "Tailwind CSS", "Java Spring Boot",
-  "PostgreSQL", "Docker", "GitHub Actions", "Nginx", "VPS",
+  "React",
+  "TypeScript",
+  "Tailwind CSS",
+  "Java Spring Boot",
+  "PostgreSQL",
+  "Docker",
+  "GitHub Actions",
+  "Nginx",
+  "VPS",
 ];
 
 export const contactInfo = {

@@ -1,7 +1,15 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
-export function Tilt({ children, className, max = 8 }: { children: ReactNode; className?: string; max?: number }) {
+export function Tilt({
+  children,
+  className,
+  max = 8,
+}: {
+  children: ReactNode;
+  className?: string;
+  max?: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -16,7 +24,10 @@ export function Tilt({ children, className, max = 8 }: { children: ReactNode; cl
     x.set((e.clientX - r.left) / r.width - 0.5);
     y.set((e.clientY - r.top) / r.height - 0.5);
   };
-  const onLeave = () => { x.set(0); y.set(0); };
+  const onLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
   return (
     <motion.div

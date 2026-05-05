@@ -12,8 +12,10 @@ export const fr = {
     name: "Houssein GHANNOUM",
     title: "Développeur Full-Stack Java / React",
     subtitle: "Ingénieur Logiciel",
-    tagline1: "Développeur Full-Stack Java / React passionné par la création d'applications web modernes, robustes et déployées en production.",
-    tagline2: "Ingénieur logiciel junior spécialisé en Java Spring Boot, React et Python, avec une expérience concrète en API REST, Docker, CI/CD et déploiement VPS.",
+    tagline1:
+      "Développeur Full-Stack Java / React passionné par la création d'applications web modernes, robustes et déployées en production.",
+    tagline2:
+      "Ingénieur logiciel junior spécialisé en Java Spring Boot, React et Python, avec une expérience concrète en API REST, Docker, CI/CD et déploiement VPS.",
     cta: { projects: "Voir mes projets", cv: "Télécharger mon CV", contact: "Me contacter" },
   },
   about: {
@@ -110,7 +112,10 @@ export const fr = {
       title: "Autres projets",
       items: [
         { name: "Site e-commerce", desc: "Site e-commerce développé avec AngularJS et Bootstrap." },
-        { name: "Télégestion serre ISEN", desc: "Télégestion de l'irrigation d'une serre avec outils GCE Electronics." },
+        {
+          name: "Télégestion serre ISEN",
+          desc: "Télégestion de l'irrigation d'une serre avec outils GCE Electronics.",
+        },
       ],
     },
   },
@@ -136,7 +141,12 @@ export const fr = {
     title: "Langues",
     items: [
       { name: "Français", level: "Courant" },
-      { name: "Anglais", level: "Courant — TOEIC 850/990" },
+      {
+        name: "Anglais",
+        level: "Courant — TOEIC 850/990",
+        certificateHref: "/certificates/Houssein_Ghannoum_TOEIC.pdf",
+        certificateLabel: "Voir le résultat TOEIC",
+      },
       { name: "Arabe", level: "Langue maternelle" },
     ],
   },
@@ -144,10 +154,22 @@ export const fr = {
     title: "Pourquoi me choisir ?",
     subtitle: "Un profil complet, autonome et orienté produit",
     items: [
-      { title: "Applications complètes", desc: "Capacité à construire de bout en bout : frontend, backend, mobile et déploiement." },
-      { title: "Stack full-stack solide", desc: "Java Spring Boot, React, Python, Docker, CI/CD et bases de données SQL/NoSQL." },
-      { title: "Sens produit", desc: "Expérience concrète sur projets SaaS et applications métier en production." },
-      { title: "Autonomie technique", desc: "Habitué à mener un projet de l'analyse à la mise en production sur VPS." },
+      {
+        title: "Applications complètes",
+        desc: "Capacité à construire de bout en bout : frontend, backend, mobile et déploiement.",
+      },
+      {
+        title: "Stack full-stack solide",
+        desc: "Java Spring Boot, React, Python, Docker, CI/CD et bases de données SQL/NoSQL.",
+      },
+      {
+        title: "Sens produit",
+        desc: "Expérience concrète sur projets SaaS et applications métier en production.",
+      },
+      {
+        title: "Autonomie technique",
+        desc: "Habitué à mener un projet de l'analyse à la mise en production sur VPS.",
+      },
     ],
   },
   stack: {
@@ -156,7 +178,8 @@ export const fr = {
   },
   availability: {
     title: "Disponibilité",
-    desc: "Disponible pour CDI, freelance ou opportunités Full-Stack Java/React, Backend Python ou Développeur Android Kotlin — partout en France, en présentiel, hybride ou remote.",
+    desc: "Disponible pour un CDI en développement Full-Stack Java / React, avec ouverture aux postes Backend Python et Android Kotlin.",
+    highlights: ["CDI", "Java / React / Python", "France · présentiel ou remote"],
   },
   contact: {
     title: "Contact",

@@ -12,8 +12,10 @@ export const en = {
     name: "Houssein GHANNOUM",
     title: "Full-Stack Java / React Developer",
     subtitle: "Software Engineer",
-    tagline1: "Full-Stack Java / React developer passionate about building modern, robust web applications shipped to production.",
-    tagline2: "Junior software engineer specialized in Java Spring Boot, React and Python, with hands-on experience in REST APIs, Docker, CI/CD and VPS deployment.",
+    tagline1:
+      "Full-Stack Java / React developer passionate about building modern, robust web applications shipped to production.",
+    tagline2:
+      "Junior software engineer specialized in Java Spring Boot, React and Python, with hands-on experience in REST APIs, Docker, CI/CD and VPS deployment.",
     cta: { projects: "View my projects", cv: "Download my resume", contact: "Contact me" },
   },
   about: {
@@ -110,7 +112,10 @@ export const en = {
       title: "Other projects",
       items: [
         { name: "E-commerce website", desc: "E-commerce site built with AngularJS and Bootstrap." },
-        { name: "ISEN greenhouse remote control", desc: "Remote irrigation management for a greenhouse using GCE Electronics tools." },
+        {
+          name: "ISEN greenhouse remote control",
+          desc: "Remote irrigation management for a greenhouse using GCE Electronics tools.",
+        },
       ],
     },
   },
@@ -136,7 +141,12 @@ export const en = {
     title: "Languages",
     items: [
       { name: "French", level: "Fluent" },
-      { name: "English", level: "Fluent — TOEIC 850/990" },
+      {
+        name: "English",
+        level: "Fluent — TOEIC 850/990",
+        certificateHref: "/certificates/Houssein_Ghannoum_TOEIC.pdf",
+        certificateLabel: "View TOEIC result",
+      },
       { name: "Arabic", level: "Native" },
     ],
   },
@@ -144,10 +154,22 @@ export const en = {
     title: "Why work with me?",
     subtitle: "A complete, autonomous and product-driven profile",
     items: [
-      { title: "End-to-end apps", desc: "Able to build complete products: frontend, backend, mobile and deployment." },
-      { title: "Solid full-stack", desc: "Java Spring Boot, React, Python, Docker, CI/CD and SQL/NoSQL databases." },
-      { title: "Product mindset", desc: "Hands-on experience with SaaS and business apps shipped to production." },
-      { title: "Technical autonomy", desc: "Used to driving a project from analysis to production on VPS." },
+      {
+        title: "End-to-end apps",
+        desc: "Able to build complete products: frontend, backend, mobile and deployment.",
+      },
+      {
+        title: "Solid full-stack",
+        desc: "Java Spring Boot, React, Python, Docker, CI/CD and SQL/NoSQL databases.",
+      },
+      {
+        title: "Product mindset",
+        desc: "Hands-on experience with SaaS and business apps shipped to production.",
+      },
+      {
+        title: "Technical autonomy",
+        desc: "Used to driving a project from analysis to production on VPS.",
+      },
     ],
   },
   stack: {
@@ -156,7 +178,8 @@ export const en = {
   },
   availability: {
     title: "Availability",
-    desc: "Available for full-time, freelance or opportunities as Full-Stack Java/React, Python Backend or Android Kotlin developer — anywhere in France, on-site, hybrid or remote.",
+    desc: "Available for a full-time role in Full-Stack Java / React development, with openness to Python Backend and Android Kotlin positions.",
+    highlights: ["Full-time", "Java / React / Python", "France · on-site or remote"],
   },
   contact: {
     title: "Contact",

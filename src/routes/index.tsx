@@ -25,7 +25,10 @@ export const Route = createFileRoute("/")({
           "Portfolio de Houssein GHANNOUM, ingénieur logiciel et développeur Full-Stack Java / React. Disponible pour CDI, freelance et missions en France.",
       },
       { property: "og:title", content: "Houssein GHANNOUM — Full-Stack Java / React" },
-      { property: "og:description", content: "Ingénieur logiciel spécialisé Java Spring Boot, React, Python, Docker et CI/CD." },
+      {
+        property: "og:description",
+        content: "Ingénieur logiciel spécialisé Java Spring Boot, React, Python, Docker et CI/CD.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

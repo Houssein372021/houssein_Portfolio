@@ -6,10 +6,14 @@ import { contactInfo } from "@/data/portfolio";
 
 export function Hero() {
   const { t, i18n } = useTranslation();
-  const cvHref = i18n.language === "en" ? "/cv/Houssein_Ghannoum_CV_EN.pdf" : "/cv/Houssein_Ghannoum_CV_FR.pdf";
+  const cvHref =
+    i18n.language === "en" ? "/cv/Houssein_Ghannoum_CV_EN.pdf" : "/cv/Houssein_Ghannoum_CV_FR.pdf";
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden"
+    >
       <div className="absolute inset-0 animated-grid opacity-60" />
       <motion.div
         animate={{ scale: [1, 1.15, 1], x: [0, 30, 0], y: [0, -20, 0] }}
@@ -98,10 +102,22 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="mt-8 flex items-center gap-5 text-muted-foreground"
           >
-            <a href={contactInfo.github} target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors" aria-label="GitHub">
+            <a
+              href={contactInfo.github}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-foreground transition-colors"
+              aria-label="GitHub"
+            >
               <Github className="w-5 h-5" />
             </a>
-            <a href={contactInfo.linkedin} target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors" aria-label="LinkedIn">
+            <a
+              href={contactInfo.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-foreground transition-colors"
+              aria-label="LinkedIn"
+            >
               <Linkedin className="w-5 h-5" />
             </a>
             <span className="flex items-center gap-1.5 text-sm">
@@ -126,7 +142,13 @@ export function Hero() {
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
             className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden border-4 border-card shadow-glow animate-float-slow"
           >
-            <img src={avatar} alt="Houssein GHANNOUM" width={512} height={512} className="w-full h-full object-cover" />
+            <img
+              src={avatar}
+              alt="Houssein GHANNOUM"
+              width={512}
+              height={512}
+              className="w-full h-full object-cover object-[center_18%] scale-110"
+            />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

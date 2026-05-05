@@ -9,7 +9,10 @@ const variantsMap: Record<Direction, Variants> = {
   left: { hidden: { opacity: 0, x: -50 }, show: { opacity: 1, x: 0 } },
   right: { hidden: { opacity: 0, x: 50 }, show: { opacity: 1, x: 0 } },
   scale: { hidden: { opacity: 0, scale: 0.85 }, show: { opacity: 1, scale: 1 } },
-  blur: { hidden: { opacity: 0, filter: "blur(12px)", y: 20 }, show: { opacity: 1, filter: "blur(0px)", y: 0 } },
+  blur: {
+    hidden: { opacity: 0, filter: "blur(12px)", y: 20 },
+    show: { opacity: 1, filter: "blur(0px)", y: 0 },
+  },
   fade: { hidden: { opacity: 0 }, show: { opacity: 1 } },
 };
 
@@ -19,7 +22,12 @@ export function Reveal({
   direction = "up",
   duration = 0.7,
   ...props
-}: { children: ReactNode; delay?: number; direction?: Direction; duration?: number } & HTMLMotionProps<"div">) {
+}: {
+  children: ReactNode;
+  delay?: number;
+  direction?: Direction;
+  duration?: number;
+} & HTMLMotionProps<"div">) {
   return (
     <motion.div
       variants={variantsMap[direction]}
@@ -58,5 +66,10 @@ export function StaggerGroup({
 
 export const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30, filter: "blur(6px)" },
-  show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
 };

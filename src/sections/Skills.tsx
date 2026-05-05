@@ -19,7 +19,9 @@ export function Skills() {
     <section id="skills" className="py-24 sm:py-32 bg-muted/30 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-sm font-semibold text-primary uppercase tracking-wider">{t("skills.title")}</p>
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider">
+            {t("skills.title")}
+          </p>
           <h2 className="mt-2 text-3xl sm:text-5xl font-bold">{t("skills.subtitle")}</h2>
         </Reveal>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -35,7 +37,10 @@ export function Skills() {
                 </div>
                 <div className="relative flex flex-wrap gap-2">
                   {c.items.map((s) => (
-                    <span key={s} className="px-3 py-1 text-sm rounded-md bg-muted border border-border font-medium transition-all hover:bg-primary/10 hover:border-primary/40 hover:-translate-y-0.5 hover:text-primary">
+                    <span
+                      key={s}
+                      className="px-3 py-1 text-sm rounded-md bg-muted border border-border font-medium transition-all hover:bg-primary/10 hover:border-primary/40 hover:-translate-y-0.5 hover:text-primary"
+                    >
                       {s}
                     </span>
                   ))}

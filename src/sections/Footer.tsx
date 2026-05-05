@@ -8,11 +8,29 @@ export function Footer() {
   return (
     <footer className="border-t border-border py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-        <p>© {year} Houssein GHANNOUM. {t("footer.rights")}</p>
+        <p>
+          © {year} Houssein GHANNOUM. {t("footer.rights")}
+        </p>
         <div className="flex items-center gap-4">
-          <a href={contactInfo.github} target="_blank" rel="noreferrer" className="hover:text-foreground"><Github className="w-4 h-4" /></a>
-          <a href={contactInfo.linkedin} target="_blank" rel="noreferrer" className="hover:text-foreground"><Linkedin className="w-4 h-4" /></a>
-          <a href={`mailto:${contactInfo.email}`} className="hover:text-foreground"><Mail className="w-4 h-4" /></a>
+          <a
+            href={contactInfo.github}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-foreground"
+          >
+            <Github className="w-4 h-4" />
+          </a>
+          <a
+            href={contactInfo.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-foreground"
+          >
+            <Linkedin className="w-4 h-4" />
+          </a>
+          <a href={`mailto:${contactInfo.email}`} className="hover:text-foreground">
+            <Mail className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </footer>
