@@ -140,12 +140,6 @@ export function Hero() {
             </div>
           </motion.div>
         </motion.div>
-            <div className="flex items-center gap-2 text-sm font-medium">
-              <Sparkles className="w-4 h-4 text-accent" />
-              Full-Stack Engineer
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
