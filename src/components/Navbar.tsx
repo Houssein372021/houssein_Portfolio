@@ -49,7 +49,7 @@ export function Navbar() {
           aria-label="Houssein GHANNOUM"
         >
           <img
-            src={withBasePath("/hg-logo.svg")}
+            src={withBasePath("/hg-logo.png")}
             alt=""
             width={40}
             height={40}
