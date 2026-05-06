@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Moon, Sun, Globe, Menu, X } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
+import { withBasePath } from "@/lib/public-path";
 
 const navItems = [
   { id: "about", key: "nav.about" },
@@ -44,9 +45,16 @@ export function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <button
           onClick={() => scrollTo("hero")}
-          className="font-display font-bold text-lg tracking-tight"
+          className="flex h-10 w-10 items-center justify-center rounded-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          aria-label="Houssein GHANNOUM"
         >
-          <span className="text-gradient">HG.</span>
+          <img
+            src={withBasePath("/hg-logo.svg")}
+            alt=""
+            width={40}
+            height={40}
+            className="h-9 w-9 rounded-lg shadow-card-premium"
+          />
         </button>
 
         <div className="hidden lg:flex items-center gap-1">
