@@ -53,7 +53,7 @@ export function Navbar() {
             alt=""
             width={40}
             height={40}
-            className="h-9 w-9 rounded-lg shadow-card-premium"
+            className="h-10 w-10 rounded-xl border-2 border-primary/70 bg-white shadow-[0_10px_26px_-14px_rgba(15,23,42,0.9)] dark:border-white/20"
           />
         </button>
 
