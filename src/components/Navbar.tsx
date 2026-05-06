@@ -45,16 +45,18 @@ export function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <button
           onClick={() => scrollTo("hero")}
-          className="flex h-10 w-10 items-center justify-center rounded-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="flex h-12 w-12 items-center justify-center rounded-xl bg-white p-1 ring-1 ring-slate-950/15 shadow-[0_12px_28px_-16px_rgba(15,23,42,0.9)] transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:ring-white/20"
           aria-label="Houssein GHANNOUM"
         >
-          <img
-            src={withBasePath("/hg-logo.png")}
-            alt=""
-            width={40}
-            height={40}
-            className="h-9 w-9 rounded-lg shadow-card-premium"
-          />
+          <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg bg-white">
+            <img
+              src={withBasePath("/hg-logo.png")}
+              alt=""
+              width={40}
+              height={40}
+              className="h-full w-full scale-[1.7] object-cover"
+            />
+          </span>
         </button>
 
         <div className="hidden lg:flex items-center gap-1">
