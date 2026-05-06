@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, Github, Linkedin, MapPin, Sparkles } from "lucide-react";
-import avatar from "@/assets/avatar.jpg";
+import avatar from "@/assets/avatar-portfolio.jpg";
 import { contactInfo } from "@/data/portfolio";
 import { withBasePath } from "@/lib/public-path";
 
@@ -149,7 +149,7 @@ export function Hero() {
               alt="Houssein GHANNOUM"
               width={512}
               height={512}
-              className="w-full h-full object-cover object-[center_18%] scale-110"
+              className="w-full h-full object-cover object-center"
             />
           </motion.div>
           <motion.div
