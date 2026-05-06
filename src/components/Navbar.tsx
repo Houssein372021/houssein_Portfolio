@@ -80,7 +80,7 @@ export function Navbar() {
               <span>{i18n.language.toUpperCase()}</span>
             </button>
             {langOpen && (
-              <div className="absolute inset-e-0 mt-2 w-20 glass border border-border rounded-lg shadow-card-premium overflow-hidden">
+              <div className="absolute inset-e-0 mt-2 w-28 glass border border-border rounded-lg shadow-card-premium overflow-hidden">
                 {langs.map((l) => (
                   <button
                     key={l.code}
