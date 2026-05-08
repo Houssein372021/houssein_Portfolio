@@ -17,6 +17,7 @@ export function Footer() {
             target="_blank"
             rel="noreferrer"
             className="hover:text-foreground"
+            aria-label="GitHub"
           >
             <Github className="w-4 h-4" />
           </a>
@@ -25,10 +26,15 @@ export function Footer() {
             target="_blank"
             rel="noreferrer"
             className="hover:text-foreground"
+            aria-label="LinkedIn"
           >
             <Linkedin className="w-4 h-4" />
           </a>
-          <a href={`mailto:${contactInfo.email}`} className="hover:text-foreground">
+          <a
+            href={`mailto:${contactInfo.email}`}
+            className="hover:text-foreground"
+            aria-label={`Email ${contactInfo.email}`}
+          >
             <Mail className="w-4 h-4" />
           </a>
         </div>

@@ -172,13 +172,6 @@ export function Projects() {
     setSelectedKey(null);
   };
 
-  const openProjectFromKeyboard = (event: React.KeyboardEvent<HTMLElement>, key: ProjectKey) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      openProject(key);
-    }
-  };
-
   return (
     <section id="projects" className="py-24 sm:py-32 bg-muted/30 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -199,16 +192,13 @@ export function Projects() {
               <Reveal key={k} delay={i * 0.1} direction={i % 2 === 0 ? "left" : "right"}>
                 <Tilt className="h-full">
                   <article
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`${t("projects.openDetails")}: ${item.name}`}
                     onClick={() => openProject(k)}
-                    onKeyDown={(event) => openProjectFromKeyboard(event, k)}
+                    aria-labelledby={`project-title-${k}`}
                     className={`group relative h-full p-6 sm:p-8 rounded-2xl border bg-card card-hover overflow-hidden ${
                       featured
                         ? "border-primary/40 hover:border-primary hover:shadow-glow"
                         : "border-border hover:border-primary/40 hover:shadow-card-premium"
-                    } cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
+                    } cursor-pointer`}
                   >
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                       <div className="absolute -inset-1 bg-gradient-hero opacity-10 blur-2xl" />
@@ -233,7 +223,12 @@ export function Projects() {
                         <Folder className="w-5 h-5 text-primary" />
                       </div>
                     )}
-                    <h3 className="relative text-xl sm:text-2xl font-bold">{item.name}</h3>
+                    <h3
+                      id={`project-title-${k}`}
+                      className="relative text-xl sm:text-2xl font-bold"
+                    >
+                      {item.name}
+                    </h3>
                     <p className="relative text-sm text-primary font-medium mt-1">{item.type}</p>
                     <p className="relative text-xs text-muted-foreground mt-1">{item.period}</p>
                     <p className="relative mt-4 text-muted-foreground leading-relaxed">
@@ -250,10 +245,18 @@ export function Projects() {
                       ))}
                     </div>
                     <div className="relative mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
-                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                      <button
+                        type="button"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          openProject(k);
+                        }}
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                        aria-label={`${t("projects.openDetails")}: ${item.name}`}
+                      >
                         <MousePointerClick className="w-4 h-4" />
                         <span className="underline-grow">{t("projects.detailsCta")}</span>
-                      </span>
+                      </button>
                       {link && (
                         <a
                           href={link}
@@ -262,6 +265,7 @@ export function Projects() {
                           onClick={(event) => event.stopPropagation()}
                           onKeyDown={(event) => event.stopPropagation()}
                           className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted-foreground hover:text-primary transition-colors group/link"
+                          aria-label={`${t("projects.visit")}: ${item.name}`}
                         >
                           <span className="underline-grow">{t("projects.visit")}</span>
                           <ArrowUpRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
@@ -387,6 +391,7 @@ function ProjectDetailDialog({
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  aria-label={`${visitLabel}: ${detail.title}`}
                 >
                   <ExternalLink className="h-4 w-4" />
                   {visitLabel}
