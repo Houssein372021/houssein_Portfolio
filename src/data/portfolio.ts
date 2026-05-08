@@ -17,43 +17,10 @@ export const experienceTechs = [
 ];
 
 export const projectTechs: Record<ProjectKey, string[]> = {
-  orderhub: [
-    "Docker",
-    "Spring Boot",
-    "PostgreSQL",
-    "React",
-    "Tailwind CSS",
-    "TypeScript",
-    "Spring Data JPA",
-    "JWT",
-    "REST API",
-  ],
-  beyrouthine: [
-    "React",
-    "TypeScript",
-    "Vite",
-    "React Router",
-    "Tailwind CSS",
-    "Spring Boot",
-    "Java 17",
-    "PostgreSQL",
-    "Docker",
-    "Traefik",
-    "Nginx",
-    "REST API",
-  ],
-  sezaia: ["React", "Flask", "MySQL", "Kotlin Android", "Firebase", "Nginx", "VPS IONOS"],
-  caashpay: [
-    "Kotlin",
-    "Ktor",
-    "Python",
-    "MongoDB",
-    "ISO 8583",
-    "CB2A",
-    "JWT",
-    "Postman",
-    "PCI DSS",
-  ],
+  orderhub: ["React", "Spring Boot", "PostgreSQL", "Docker", "JWT"],
+  beyrouthine: ["React", "Spring Boot", "PostgreSQL", "Docker", "Traefik"],
+  sezaia: ["React", "Flask", "MySQL", "Kotlin Android", "QR Code"],
+  caashpay: ["Kotlin", "Ktor", "ISO 8583", "CB2A", "MongoDB"],
 };
 
 export const projectLinks: Partial<Record<ProjectKey, string>> = {
