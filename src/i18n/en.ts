@@ -54,7 +54,7 @@ export const en = {
         company: "SEZAIA",
         role: "Mobile & Web Developer Apprentice",
         period: "10/2024 – 09/2025",
-        location: "Brest",
+        location: "Brest, France",
         bullets: [
           "Developed a complete after-sales solution including an Android app (Kotlin) and a React web interface for customer incident management.",
           "Designed and developed a REST API with Flask (Python) connected to a MySQL database.",
@@ -67,7 +67,7 @@ export const en = {
         company: "CAASHPAY",
         role: "Java Developer Intern",
         period: "06/2024 – 09/2024",
-        location: "Paris",
+        location: "Paris, France",
         bullets: [
           "Developed a secure REST payment API in Java compliant with the CB2A protocol and ISO8583 standard.",
           "Designed a Python acquiring bank simulator to test payment flows.",

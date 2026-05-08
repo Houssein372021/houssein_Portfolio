@@ -54,7 +54,7 @@ export const fr = {
         company: "SEZAIA",
         role: "Alternant Développeur Mobile & Web",
         period: "10/2024 – 09/2025",
-        location: "Brest",
+        location: "Brest, France",
         bullets: [
           "Développement d’une solution SAV complète comprenant une application Android (Kotlin) et une interface web React pour la gestion des incidents clients.",
           "Conception et développement d’une API REST avec Flask (Python) connectée à une base MySQL.",
@@ -67,7 +67,7 @@ export const fr = {
         company: "CAASHPAY",
         role: "Stagiaire Développeur Java",
         period: "06/2024 – 09/2024",
-        location: "Paris",
+        location: "Paris, France",
         bullets: [
           "Développement d’une API REST de paiement sécurisée conforme au protocole CB2A et à la norme ISO8583 en Java.",
           "Conception d’un simulateur de banque acquéreur en Python pour tester les flux de paiement.",
