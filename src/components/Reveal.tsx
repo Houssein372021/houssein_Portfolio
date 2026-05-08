@@ -1,75 +1,82 @@
-import { motion, type HTMLMotionProps, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type HTMLAttributes,
+  type ReactNode,
+} from "react";
 
 type Direction = "up" | "down" | "left" | "right" | "scale" | "blur" | "fade";
-
-const variantsMap: Record<Direction, Variants> = {
-  up: { hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0 } },
-  down: { hidden: { opacity: 0, y: -40 }, show: { opacity: 1, y: 0 } },
-  left: { hidden: { opacity: 0, x: -50 }, show: { opacity: 1, x: 0 } },
-  right: { hidden: { opacity: 0, x: 50 }, show: { opacity: 1, x: 0 } },
-  scale: { hidden: { opacity: 0, scale: 0.85 }, show: { opacity: 1, scale: 1 } },
-  blur: {
-    hidden: { opacity: 0, filter: "blur(12px)", y: 20 },
-    show: { opacity: 1, filter: "blur(0px)", y: 0 },
-  },
-  fade: { hidden: { opacity: 0 }, show: { opacity: 1 } },
-};
 
 export function Reveal({
   children,
   delay = 0,
   direction = "up",
   duration = 0.7,
+  className = "",
+  style,
   ...props
 }: {
   children: ReactNode;
   delay?: number;
   direction?: Direction;
   duration?: number;
-} & HTMLMotionProps<"div">) {
+} & HTMLAttributes<HTMLDivElement>) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    if (
+      !("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setVisible(true);
+        observer.disconnect();
+      },
+      { rootMargin: "-80px 0px", threshold: 0.12 },
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
+  const revealStyle = {
+    ...style,
+    "--reveal-delay": `${delay}s`,
+    "--reveal-duration": `${duration}s`,
+  } as CSSProperties;
+
   return (
-    <motion.div
-      variants={variantsMap[direction]}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
+    <div
+      ref={ref}
+      className={`reveal reveal-${direction} ${visible ? "is-visible" : ""} ${className}`}
+      style={revealStyle}
       {...props}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
 export function StaggerGroup({
   children,
-  delay = 0,
-  stagger = 0.08,
+  className = "",
   ...props
-}: { children: ReactNode; delay?: number; stagger?: number } & HTMLMotionProps<"div">) {
+}: { children: ReactNode; delay?: number; stagger?: number } & HTMLAttributes<HTMLDivElement>) {
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
-      variants={{
-        hidden: {},
-        show: { transition: { staggerChildren: stagger, delayChildren: delay } },
-      }}
-      {...props}
-    >
+    <div className={className} {...props}>
       {children}
-    </motion.div>
+    </div>
   );
 }
-
-export const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30, filter: "blur(6px)" },
-  show: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-  },
-};

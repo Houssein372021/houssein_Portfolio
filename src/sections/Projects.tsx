@@ -36,8 +36,8 @@ import {
   type ProjectDetailSection,
   type ProjectKey,
 } from "@/data/portfolio";
-import orderHubLogo from "@/assets/projects/logo_orderhub_banner.png";
-import laBeiruthineLogo from "@/assets/projects/logo_labeiruthine_banner.png";
+import orderHubLogo from "@/assets/projects/logo_orderhub_banner.webp";
+import laBeiruthineLogo from "@/assets/projects/logo_labeiruthine_banner.webp";
 import assistByScanLogo from "@/assets/projects/assistbyscan_qr_logo.svg";
 import caashpayLogo from "@/assets/companies/caashpay.svg";
 
@@ -215,6 +215,8 @@ export function Projects() {
                         <img
                           src={logo.src}
                           alt={`${item.name} logo`}
+                          loading="lazy"
+                          decoding="async"
                           className={`w-full h-full ${logo.className}`}
                         />
                       </div>
@@ -402,7 +404,13 @@ function ProjectDetailDialog({
             <aside className="rounded-xl bg-muted/50 p-5">
               {image && (
                 <div className="mb-5 overflow-hidden rounded-xl border border-border bg-white p-4">
-                  <img src={image.src} alt={image.alt} className="mx-auto h-auto w-full max-w-xs" />
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="mx-auto h-auto w-full max-w-xs"
+                  />
                 </div>
               )}
               <h3 className="text-base font-bold">Technologies</h3>

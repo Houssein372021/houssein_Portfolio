@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
 import { MapPin, Calendar } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { experienceTechs } from "@/data/portfolio";
@@ -31,29 +30,18 @@ export function Experience() {
         </Reveal>
 
         <div className="mt-14 relative">
-          <motion.div
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            style={{ transformOrigin: "top" }}
-            className="hidden md:block absolute start-6 top-8 bottom-8 w-px bg-gradient-to-b from-primary via-accent to-transparent"
-          />
+          <div className="timeline-line hidden md:block absolute start-6 top-8 bottom-8 w-px bg-gradient-to-b from-primary via-accent to-transparent" />
           <div className="space-y-8">
             {items.map((exp, i) => (
               <Reveal key={exp.company} delay={i * 0.12} direction="right">
                 <div className="relative md:ps-20">
-                  <motion.div
-                    whileHover={{ scale: 1.08 }}
-                    transition={{ duration: 0.4 }}
-                    className="hidden md:flex absolute start-0 top-8 w-12 h-12 rounded-2xl bg-card border border-border shadow-card-premium items-center justify-center overflow-hidden"
-                  >
+                  <div className="hidden md:flex absolute start-0 top-8 w-12 h-12 rounded-2xl bg-card border border-border shadow-card-premium items-center justify-center overflow-hidden transition-transform duration-300 hover:scale-105">
                     <img
                       src={companyLogos[i]}
                       alt={`${exp.company} logo`}
                       className="w-full h-full object-contain"
                     />
-                  </motion.div>
+                  </div>
 
                   <article className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-card-premium transition-colors hover:border-primary/40">
                     <div className="absolute inset-x-0 top-0 h-1 bg-gradient-hero" />

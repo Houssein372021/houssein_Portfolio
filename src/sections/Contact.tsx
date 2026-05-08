@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Mail, Linkedin, Phone, MessageCircle, Download, Github } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import { contactInfo } from "@/data/portfolio";
+import { contactInfo } from "@/data/contact";
 import { withBasePath } from "@/lib/public-path";
 
 export function Contact() {

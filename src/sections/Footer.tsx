@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Github, Linkedin, Mail } from "lucide-react";
-import { contactInfo } from "@/data/portfolio";
+import { contactInfo } from "@/data/contact";
 
 export function Footer() {
   const { t } = useTranslation();

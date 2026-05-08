@@ -1,12 +1,14 @@
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+import type { CSSProperties } from "react";
 import { ArrowRight, Download, Mail, Github, Linkedin, MapPin, Sparkles } from "lucide-react";
-import avatar from "@/assets/avatar-portfolio.jpg";
-import { contactInfo } from "@/data/portfolio";
+import { contactInfo } from "@/data/contact";
 import { withBasePath } from "@/lib/public-path";
+
+const heroDelay = (delay: string) => ({ "--hero-delay": delay }) as CSSProperties;
 
 export function Hero() {
   const { t, i18n } = useTranslation();
+  const avatar = withBasePath("/avatar-portfolio.webp");
   const cvHref = withBasePath(
     i18n.language === "en" ? "/cv/Houssein_Ghannoum_CV_EN.pdf" : "/cv/Houssein_Ghannoum_CV_FR.pdf",
   );
@@ -17,66 +19,43 @@ export function Hero() {
       className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden"
     >
       <div className="absolute inset-0 animated-grid opacity-60" />
-      <motion.div
-        animate={{ scale: [1, 1.15, 1], x: [0, 30, 0], y: [0, -20, 0] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/3 -end-20 w-[500px] h-[500px] rounded-full bg-primary/25 blur-[120px]"
-      />
-      <motion.div
-        animate={{ scale: [1, 1.2, 1], x: [0, -25, 0], y: [0, 30, 0] }}
-        transition={{ duration: 17, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-0 -start-20 w-[400px] h-[400px] rounded-full bg-accent/25 blur-[120px]"
-      />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center w-full">
         <div>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border glass text-xs font-medium mb-6"
+          <div
+            className="hero-enter inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border glass text-xs font-medium mb-6"
+            style={heroDelay("0s")}
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
             </span>
             {t("hero.available")}
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05]"
+          <h1
+            style={heroDelay("0.1s")}
+            className="hero-enter text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05]"
           >
             {t("hero.name")}
-          </motion.h1>
+          </h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-display font-semibold text-gradient"
+          <div
+            style={heroDelay("0.18s")}
+            className="hero-enter mt-4 text-2xl sm:text-3xl lg:text-4xl font-display font-semibold text-gradient"
           >
             {t("hero.title")}
-          </motion.div>
+          </div>
           <p className="mt-2 text-lg text-muted-foreground font-medium">{t("hero.subtitle")}</p>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.35 }}
-            className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed"
+          <p
+            style={heroDelay("0.28s")}
+            className="hero-enter mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed"
           >
             {t("hero.tagline1")}
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-8 flex flex-wrap gap-3"
-          >
+          <div style={heroDelay("0.38s")} className="hero-enter mt-8 flex flex-wrap gap-3">
             <a
               href="#projects"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-gradient-hero text-primary-foreground font-medium shadow-glow hover:scale-[1.02] transition-transform"
@@ -96,13 +75,11 @@ export function Hero() {
             >
               <Mail className="w-4 h-4" /> {t("hero.cta.contact")}
             </a>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-8 flex items-center gap-5 text-muted-foreground"
+          <div
+            style={heroDelay("0.48s")}
+            className="hero-enter mt-8 flex items-center gap-5 text-muted-foreground"
           >
             <a
               href={contactInfo.github}
@@ -125,45 +102,32 @@ export function Hero() {
             <span className="flex items-center gap-1.5 text-sm">
               <MapPin className="w-4 h-4" /> France
             </span>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85, rotate: -6 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto"
-        >
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="absolute -inset-6 bg-gradient-hero rounded-3xl blur-2xl opacity-40"
-          />
-          <motion.div
-            whileHover={{ scale: 1.04, rotate: 2 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden border-4 border-card shadow-glow animate-float-slow"
-          >
+        <div style={heroDelay("0.22s")} className="hero-enter relative mx-auto">
+          <div className="hero-avatar relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden border-4 border-card shadow-glow transition-transform duration-300 hover:scale-[1.04] hover:rotate-2">
             <img
               src={avatar}
               alt="Houssein GHANNOUM"
-              width={512}
-              height={512}
+              width={384}
+              height={384}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
               className="w-full h-full object-cover object-center"
             />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
-            className="absolute -bottom-4 -end-4 glass border border-border rounded-2xl px-4 py-3 shadow-card-premium"
+          </div>
+          <div
+            style={heroDelay("0.62s")}
+            className="hero-enter absolute -bottom-4 -end-4 glass border border-border rounded-2xl px-4 py-3 shadow-card-premium"
           >
             <div className="flex items-center gap-2 text-sm font-medium">
               <Sparkles className="w-4 h-4 text-accent animate-pulse" />
               {t("hero.badge")}
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
