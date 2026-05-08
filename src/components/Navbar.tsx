@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n";
 import { Moon, Sun, Globe, Menu, X } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { withBasePath } from "@/lib/public-path";

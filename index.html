@@ -16,9 +16,220 @@
       type="image/webp"
       fetchpriority="high"
     />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f8fafc;
+        --fg: #172033;
+        --muted: #647184;
+        --primary: #0f6e86;
+        --accent: #1d9a78;
+        --border: #d9e1eb;
+        --card: #fff;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+      .boot-shell {
+        min-height: 100vh;
+        overflow: hidden;
+      }
+      .boot-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+      }
+      .boot-logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        border: 2px solid rgba(15, 110, 134, 0.7);
+        background: #fff;
+      }
+      .boot-hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 80px 16px 48px;
+        box-sizing: border-box;
+      }
+      .boot-grid {
+        position: absolute;
+        inset: 0;
+        opacity: 0.6;
+        background-image:
+          linear-gradient(to right, rgba(15, 110, 134, 0.1) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(15, 110, 134, 0.1) 1px, transparent 1px);
+        background-size: 48px 48px;
+        mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+      }
+      .boot-inner {
+        position: relative;
+        width: min(100%, 1280px);
+        margin: 0 auto;
+        display: grid;
+        gap: 48px;
+        align-items: center;
+      }
+      .boot-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 24px;
+        padding: 6px 12px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.7);
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .boot-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+      .boot-title {
+        margin: 0;
+        max-width: 780px;
+        font-size: clamp(2.25rem, 8vw, 4.5rem);
+        line-height: 1.05;
+        font-weight: 800;
+      }
+      .boot-role {
+        margin-top: 16px;
+        font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+        font-weight: 700;
+        color: var(--primary);
+      }
+      .boot-subtitle {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 1.125rem;
+        font-weight: 500;
+      }
+      .boot-copy {
+        max-width: 680px;
+        margin: 24px 0 0;
+        color: var(--muted);
+        font-size: 1.0625rem;
+        line-height: 1.7;
+      }
+      .boot-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+      .boot-action {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 20px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--fg);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .boot-action-primary {
+        border-color: transparent;
+        background: linear-gradient(135deg, #0f6e86, #1d9a78);
+        color: #fff;
+      }
+      .boot-photo-wrap {
+        position: relative;
+        width: 256px;
+        height: 256px;
+        margin: 0 auto;
+        border-radius: 24px;
+        border: 4px solid var(--card);
+        overflow: hidden;
+        box-shadow: 0 20px 52px -18px rgba(15, 110, 134, 0.32);
+      }
+      .boot-photo {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      @media (min-width: 1024px) {
+        .boot-nav {
+          padding: 0 32px;
+        }
+        .boot-inner {
+          grid-template-columns: 1.4fr 1fr;
+          padding: 0 32px;
+        }
+        .boot-photo-wrap {
+          width: 320px;
+          height: 320px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="boot-shell">
+        <header class="boot-nav" aria-hidden="true">
+          <img class="boot-logo" src="/hg-logo.webp" alt="" width="40" height="40" />
+        </header>
+        <main>
+          <section class="boot-hero" aria-label="Houssein GHANNOUM">
+            <div class="boot-grid"></div>
+            <div class="boot-inner">
+              <div>
+                <div class="boot-pill">
+                  <span class="boot-dot"></span>Disponible pour un emploi en France
+                </div>
+                <h1 class="boot-title">Houssein GHANNOUM</h1>
+                <div class="boot-role">D&eacute;veloppeur Full-Stack Java / React</div>
+                <p class="boot-subtitle">Ing&eacute;nieur Logiciel</p>
+                <p class="boot-copy">
+                  D&eacute;veloppeur Full-Stack Java / React passionn&eacute; par la cr&eacute;ation
+                  d'applications web modernes, robustes et d&eacute;ploy&eacute;es en production.
+                </p>
+                <div class="boot-actions">
+                  <a class="boot-action boot-action-primary" href="#projects">Voir mes projets</a>
+                  <a class="boot-action" href="/cv/Houssein_Ghannoum_CV_FR.pdf" download
+                    >T&eacute;l&eacute;charger mon CV</a
+                  >
+                  <a class="boot-action" href="#contact">Me contacter</a>
+                </div>
+              </div>
+              <div class="boot-photo-wrap">
+                <img
+                  class="boot-photo"
+                  src="/avatar-portfolio.webp"
+                  alt="Houssein GHANNOUM"
+                  width="384"
+                  height="384"
+                  fetchpriority="high"
+                />
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

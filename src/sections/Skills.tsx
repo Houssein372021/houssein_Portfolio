@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n";
 import { Code2, Layout, Server, Database, Smartphone, Cloud, Wrench } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { skills } from "@/data/portfolio";
