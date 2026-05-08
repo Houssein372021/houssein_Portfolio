@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
+  ArrowRight,
   ArrowUpRight,
+  Bell,
   CheckCircle2,
+  Database,
   ExternalLink,
   Folder,
+  Laptop,
+  Mail,
   MousePointerClick,
+  QrCode,
+  Server,
   Star,
+  Smartphone,
+  UploadCloud,
   X,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
@@ -16,12 +25,14 @@ import {
   projectKeys,
   projectLinks,
   projectTechs,
+  type ProjectArchitecture,
   type ProjectDetail,
   type ProjectDetailSection,
   type ProjectKey,
 } from "@/data/portfolio";
 import orderHubLogo from "@/assets/projects/logo_orderhub_banner.png";
 import laBeiruthineLogo from "@/assets/projects/logo_labeiruthine_banner.png";
+import assistByScanLogo from "@/assets/projects/assistbyscan_qr_logo.svg";
 
 const keys = projectKeys;
 
@@ -33,6 +44,17 @@ const projectLogos: Partial<Record<ProjectKey, { src: string; className: string 
   beyrouthine: {
     src: laBeiruthineLogo,
     className: "object-contain",
+  },
+  sezaia: {
+    src: assistByScanLogo,
+    className: "object-contain",
+  },
+};
+
+const projectImages: Partial<Record<ProjectKey, { src: string; alt: string }>> = {
+  sezaia: {
+    src: assistByScanLogo,
+    alt: "AssistByScan QR code logo",
   },
 };
 
@@ -195,6 +217,7 @@ export function Projects() {
         <ProjectDetailDialog
           detail={selectedDetail}
           link={projectLinks[selectedKey]}
+          image={projectImages[selectedKey]}
           caseStudyLabel={t("projects.caseStudy")}
           closeLabel={t("projects.closeDetails")}
           visitLabel={t("projects.visit")}
@@ -208,6 +231,7 @@ export function Projects() {
 function ProjectDetailDialog({
   detail,
   link,
+  image,
   caseStudyLabel,
   closeLabel,
   visitLabel,
@@ -215,6 +239,7 @@ function ProjectDetailDialog({
 }: {
   detail: ProjectDetail;
   link?: string;
+  image?: { src: string; alt: string };
   caseStudyLabel: string;
   closeLabel: string;
   visitLabel: string;
@@ -279,6 +304,11 @@ function ProjectDetailDialog({
             </div>
 
             <aside className="rounded-xl bg-muted/50 p-5">
+              {image && (
+                <div className="mb-5 overflow-hidden rounded-xl border border-border bg-white p-4">
+                  <img src={image.src} alt={image.alt} className="mx-auto h-auto w-full max-w-xs" />
+                </div>
+              )}
               <h3 className="text-base font-bold">Technologies</h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {detail.technologies.map((tech) => (
@@ -317,16 +347,16 @@ function ProjectDetailSectionView({ section }: { section: ProjectDetailSection }
         </div>
       )}
 
-      {section.diagram && (
-        <pre className="mt-5 overflow-x-auto rounded-xl bg-muted p-4 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-          {section.diagram.join("\n")}
-        </pre>
-      )}
+      {section.architecture && <ArchitectureFlow architecture={section.architecture} />}
 
       {section.items && <DetailList items={section.items} />}
 
       {section.columns && (
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
+        <div
+          className={`mt-5 grid gap-4 ${
+            section.columns.length === 1 ? "md:grid-cols-1" : "md:grid-cols-2"
+          }`}
+        >
           {section.columns.map((column) => (
             <div key={column.title} className="rounded-xl bg-muted/50 p-5">
               <h4 className="font-bold">{column.title}</h4>
@@ -350,6 +380,112 @@ function ProjectDetailSectionView({ section }: { section: ProjectDetailSection }
         </div>
       )}
     </section>
+  );
+}
+
+function ArchitectureFlow({ architecture }: { architecture: ProjectArchitecture }) {
+  const serviceIcons = [Bell, Mail, UploadCloud, QrCode];
+
+  return (
+    <div className="mt-5 rounded-xl border border-border bg-muted/40 p-4 sm:p-5">
+      <div className="grid gap-4 lg:grid-cols-[1fr_auto_1fr_auto_0.8fr] lg:items-center">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+            {architecture.inputsLabel}
+          </p>
+          <div className="mt-3 grid gap-3">
+            {architecture.sources.map((source, index) => (
+              <ArchitectureNode
+                key={source}
+                icon={index === 0 ? Laptop : Smartphone}
+                title={source}
+                compact
+              />
+            ))}
+          </div>
+        </div>
+
+        <ArchitectureArrow />
+
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+            {architecture.backendLabel}
+          </p>
+          <ArchitectureNode icon={Server} title={architecture.backend} featured className="mt-3" />
+        </div>
+
+        <ArchitectureArrow />
+
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+            {architecture.databaseLabel}
+          </p>
+          <ArchitectureNode icon={Database} title={architecture.database} className="mt-3" />
+        </div>
+      </div>
+
+      <div className="mt-5 border-t border-border pt-5">
+        <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+          {architecture.servicesLabel}
+        </p>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {architecture.services.map((service, index) => (
+            <ArchitectureNode
+              key={service}
+              icon={serviceIcons[index] ?? CheckCircle2}
+              title={service}
+              compact
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ArchitectureArrow() {
+  return (
+    <div
+      className="hidden h-full items-center justify-center text-primary/70 lg:flex"
+      aria-hidden="true"
+    >
+      <ArrowRight className="h-6 w-6" />
+    </div>
+  );
+}
+
+function ArchitectureNode({
+  icon: Icon,
+  title,
+  compact = false,
+  featured = false,
+  className = "",
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  compact?: boolean;
+  featured?: boolean;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`flex min-h-16 items-center gap-3 rounded-xl border p-4 ${
+        featured
+          ? "border-primary/35 bg-primary/10 text-foreground"
+          : "border-border bg-card text-muted-foreground"
+      } ${className}`}
+    >
+      <span
+        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-md ${
+          featured ? "bg-primary text-primary-foreground" : "bg-primary/10 text-primary"
+        }`}
+      >
+        <Icon className="h-5 w-5" />
+      </span>
+      <span className={`font-semibold leading-snug ${compact ? "text-sm" : "text-base"}`}>
+        {title}
+      </span>
+    </div>
   );
 }
 

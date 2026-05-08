@@ -57,13 +57,24 @@ export type ProjectDetailColumn = {
   items: string[];
 };
 
+export type ProjectArchitecture = {
+  inputsLabel: string;
+  sources: string[];
+  backendLabel: string;
+  backend: string;
+  databaseLabel: string;
+  database: string;
+  servicesLabel: string;
+  services: string[];
+};
+
 export type ProjectDetailSection = {
   title: string;
   body?: string[];
   items?: string[];
   columns?: ProjectDetailColumn[];
   blocks?: ProjectDetailBlock[];
-  diagram?: string[];
+  architecture?: ProjectArchitecture;
 };
 
 export type ProjectDetail = {
@@ -364,18 +375,24 @@ export const projectDetails: Record<"fr" | "en", Record<ProjectKey, ProjectDetai
               ],
             },
           ],
-          diagram: [
-            "Frontend React ------\\",
-            "                       > Backend Flask REST API ---- MySQL",
-            "Application Android --/              |",
-            "                                      |-- Firebase Cloud Messaging",
-            "                                      |-- SMTP emails",
-            "                                      |-- Uploads fichiers / vidéos",
-            "                                      |-- Génération QR codes",
-          ],
           body: [
             "Le backend joue le rôle de source de vérité. Il centralise les règles métier, les données, les sessions mobiles, les QR codes, les utilisateurs, les interventions, les rapports, les notifications et les emails.",
           ],
+          architecture: {
+            inputsLabel: "Clients applicatifs",
+            sources: ["Frontend React", "Application Android Kotlin"],
+            backendLabel: "Source de vérité",
+            backend: "Backend Flask REST API",
+            databaseLabel: "Base de données",
+            database: "MySQL",
+            servicesLabel: "Services connectés",
+            services: [
+              "Firebase Cloud Messaging",
+              "SMTP emails",
+              "Uploads fichiers / vidéos",
+              "Génération QR codes",
+            ],
+          },
         },
         {
           title: "Intégrations clés",
@@ -524,7 +541,7 @@ export const projectDetails: Record<"fr" | "en", Record<ProjectKey, ProjectDetai
           ],
         },
         {
-          title: "Apprentissages et perspectives",
+          title: "Apprentissages",
           columns: [
             {
               title: "Compétences acquises",
@@ -541,20 +558,6 @@ export const projectDetails: Record<"fr" | "en", Record<ProjectKey, ProjectDetai
                 "Configuration SMTP pour les emails transactionnels.",
                 "Déploiement sur VPS Linux avec Nginx.",
                 "Structuration d'un projet SaaS multi-tenant.",
-              ],
-            },
-            {
-              title: "Améliorations possibles",
-              items: [
-                "Clarification des rôles entre administrateur web, technicien et utilisateur terrain.",
-                "Renforcement de la sécurité côté authentification web.",
-                "Amélioration de la documentation API.",
-                "Ajout de tableaux de bord statistiques pour les interventions.",
-                "Optimisation de la gestion des rapports techniques.",
-                "Amélioration de l'expérience utilisateur mobile.",
-                "Mise en place d'une CI/CD automatisée.",
-                "Ajout de tests automatisés backend et frontend.",
-                "Renforcement de la supervision serveur et des logs applicatifs.",
               ],
             },
           ],
@@ -676,18 +679,24 @@ export const projectDetails: Record<"fr" | "en", Record<ProjectKey, ProjectDetai
               ],
             },
           ],
-          diagram: [
-            "Frontend React ------\\",
-            "                       > Flask REST API backend ---- MySQL",
-            "Android application --/              |",
-            "                                      |-- Firebase Cloud Messaging",
-            "                                      |-- SMTP emails",
-            "                                      |-- File / video uploads",
-            "                                      |-- QR code generation",
-          ],
           body: [
             "The backend acts as the source of truth. It centralizes business rules, data, mobile sessions, QR codes, users, interventions, reports, notifications and emails.",
           ],
+          architecture: {
+            inputsLabel: "Application clients",
+            sources: ["React frontend", "Android Kotlin application"],
+            backendLabel: "Source of truth",
+            backend: "Flask REST API backend",
+            databaseLabel: "Database",
+            database: "MySQL",
+            servicesLabel: "Connected services",
+            services: [
+              "Firebase Cloud Messaging",
+              "SMTP emails",
+              "File / video uploads",
+              "QR code generation",
+            ],
+          },
         },
         {
           title: "Key integrations",
@@ -836,7 +845,7 @@ export const projectDetails: Record<"fr" | "en", Record<ProjectKey, ProjectDetai
           ],
         },
         {
-          title: "Learnings and next steps",
+          title: "Learnings",
           columns: [
             {
               title: "Skills gained",
@@ -853,20 +862,6 @@ export const projectDetails: Record<"fr" | "en", Record<ProjectKey, ProjectDetai
                 "Configuring SMTP for transactional emails.",
                 "Deploying on a Linux VPS with Nginx.",
                 "Structuring a multi-tenant SaaS project.",
-              ],
-            },
-            {
-              title: "Possible improvements",
-              items: [
-                "Clarify roles between web administrator, technician and field user.",
-                "Strengthen web authentication security.",
-                "Improve API documentation.",
-                "Add statistical dashboards for interventions.",
-                "Optimize technical report management.",
-                "Improve the mobile user experience.",
-                "Set up automated CI/CD.",
-                "Add backend and frontend automated tests.",
-                "Strengthen server monitoring and application logs.",
               ],
             },
           ],
