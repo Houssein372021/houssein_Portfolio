@@ -84,20 +84,21 @@ export const en = {
     detailsCta: "View details",
     openDetails: "Open project details",
     caseStudy: "Case study",
+    backToProjects: "Back to projects",
     closeDetails: "Close details",
     featured: "Featured",
     items: {
       orderhub: {
         name: "OrderHub",
-        type: "SaaS order management platform",
+        type: "Order management platform",
         period: "04/2026 – present",
-        desc: "Full-stack SaaS app centralizing orders from channels like WhatsApp and Instagram. React + Spring Boot architecture, JWT auth, Docker deployment on VPS with GitHub Actions CI/CD.",
+        desc: "Full-stack platform for restaurants, snack bars and food businesses to centralize orders, statuses, products, users and dashboards. React, Spring Boot, PostgreSQL and Docker architecture.",
       },
       beyrouthine: {
-        name: "La Beyrouthine Restaurant",
-        type: "Full-stack restaurant website",
+        name: "La Beyrouthine",
+        type: "Restaurant website with dynamic menu and reservation",
         period: "02/2026 – 03/2026",
-        desc: "Full-stack web app with dynamic menu, automated email reservation system and admin dashboard. Spring Boot backend, PostgreSQL database, Dockerized VPS deployment.",
+        desc: "Full-stack web platform for a Lebanese restaurant with dynamic menu, online reservation, secure back-office, Spring Boot/PostgreSQL backend and Docker deployment with Traefik, Nginx and HTTPS.",
       },
       sezaia: {
         name: "AssistByScan",
@@ -106,10 +107,10 @@ export const en = {
         desc: "Multi-tenant SaaS platform built at Sezaia to digitize maintenance operations with QR codes, a React web interface, a Flask/MySQL backend and an Android Kotlin mobile app.",
       },
       caashpay: {
-        name: "CAASHPAY Payment API",
-        type: "Secure payment backend",
+        name: "Caashpay",
+        type: "CB2A payment API",
         period: "2024",
-        desc: "Secure REST payment API compliant with CB2A protocol and ISO8583 standard, with a Python acquiring bank simulator and MongoDB transaction handling.",
+        desc: "Kotlin/Ktor payment gateway able to convert JSON data into ISO 8583 messages using the CB2A/CB6 protocol, with a Python acquiring bank simulator and MongoDB storage.",
       },
     },
     secondary: {

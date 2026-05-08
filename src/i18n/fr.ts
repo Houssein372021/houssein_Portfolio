@@ -84,20 +84,21 @@ export const fr = {
     detailsCta: "Voir le détail",
     openDetails: "Ouvrir le détail du projet",
     caseStudy: "Étude de cas",
+    backToProjects: "Retour aux projets",
     closeDetails: "Fermer le détail",
     featured: "À la une",
     items: {
       orderhub: {
         name: "OrderHub",
-        type: "Plateforme SaaS de gestion de commandes",
+        type: "Plateforme de gestion de commandes",
         period: "04/2026 – aujourd'hui",
-        desc: "Application SaaS full-stack permettant de centraliser les commandes provenant de canaux comme WhatsApp et Instagram. Architecture React + Spring Boot, authentification JWT, déploiement Docker sur VPS avec CI/CD GitHub Actions.",
+        desc: "Plateforme full-stack destinée aux restaurants, snacks et commerces alimentaires pour centraliser les commandes, statuts, produits, utilisateurs et tableaux de bord. Architecture React, Spring Boot, PostgreSQL et Docker.",
       },
       beyrouthine: {
-        name: "Restaurant La Beyrouthine",
-        type: "Site web full-stack pour restaurant",
+        name: "La Beyrouthine",
+        type: "Site restaurant avec menu dynamique et réservation",
         period: "02/2026 – 03/2026",
-        desc: "Application web full-stack avec menu dynamique, système de réservation automatisé par email et tableau de bord administrateur. Backend Spring Boot, base PostgreSQL, déploiement Docker sur VPS.",
+        desc: "Plateforme web full-stack pour restaurant libanais avec carte dynamique, réservation en ligne, back-office sécurisé, backend Spring Boot/PostgreSQL et déploiement Docker avec Traefik, Nginx et HTTPS.",
       },
       sezaia: {
         name: "AssistByScan",
@@ -106,10 +107,10 @@ export const fr = {
         desc: "Plateforme SaaS multi-tenant réalisée chez Sezaia pour digitaliser les opérations de maintenance avec QR codes, interface web React, backend Flask/MySQL et application mobile Android Kotlin.",
       },
       caashpay: {
-        name: "API de paiement CAASHPAY",
-        type: "Backend paiement sécurisé",
+        name: "Caashpay",
+        type: "API de paiement CB2A",
         period: "2024",
-        desc: "API REST de paiement sécurisée conforme au protocole CB2A et à la norme ISO8583, avec simulateur de banque acquéreur en Python et gestion des transactions MongoDB.",
+        desc: "Passerelle de paiement Kotlin/Ktor capable de convertir des données JSON en messages ISO 8583 selon le protocole CB2A/CB6, avec simulateur de banque acquéreur en Python et stockage MongoDB.",
       },
     },
     secondary: {

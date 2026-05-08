@@ -1,18 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
+  ArrowLeft,
   ArrowRight,
   ArrowUpRight,
   Bell,
   CheckCircle2,
+  CreditCard,
   Database,
   ExternalLink,
   Folder,
   Laptop,
+  LayoutDashboard,
   Mail,
   MousePointerClick,
+  Package,
   QrCode,
   Server,
+  ShieldCheck,
+  ShoppingCart,
   Star,
   Smartphone,
   UploadCloud,
@@ -33,8 +39,17 @@ import {
 import orderHubLogo from "@/assets/projects/logo_orderhub_banner.png";
 import laBeiruthineLogo from "@/assets/projects/logo_labeiruthine_banner.png";
 import assistByScanLogo from "@/assets/projects/assistbyscan_qr_logo.svg";
+import caashpayLogo from "@/assets/companies/caashpay.svg";
 
 const keys = projectKeys;
+const projectHashPrefix = "#project-";
+
+function getProjectKeyFromLocation(): ProjectKey | null {
+  if (typeof window === "undefined") return null;
+
+  const hashValue = window.location.hash.replace(projectHashPrefix, "");
+  return keys.includes(hashValue as ProjectKey) ? (hashValue as ProjectKey) : null;
+}
 
 const projectLogos: Partial<Record<ProjectKey, { src: string; className: string }>> = {
   orderhub: {
@@ -49,18 +64,37 @@ const projectLogos: Partial<Record<ProjectKey, { src: string; className: string 
     src: assistByScanLogo,
     className: "object-contain",
   },
+  caashpay: {
+    src: caashpayLogo,
+    className: "object-contain",
+  },
 };
 
 const projectImages: Partial<Record<ProjectKey, { src: string; alt: string }>> = {
+  orderhub: {
+    src: orderHubLogo,
+    alt: "OrderHub project logo",
+  },
+  beyrouthine: {
+    src: laBeiruthineLogo,
+    alt: "La Beyrouthine restaurant logo",
+  },
   sezaia: {
     src: assistByScanLogo,
     alt: "AssistByScan QR code logo",
+  },
+  caashpay: {
+    src: caashpayLogo,
+    alt: "Caashpay logo",
   },
 };
 
 export function Projects() {
   const { t, i18n } = useTranslation();
-  const [selectedKey, setSelectedKey] = useState<ProjectKey | null>(null);
+  const [selectedKey, setSelectedKey] = useState<ProjectKey | null>(() =>
+    getProjectKeyFromLocation(),
+  );
+  const pushedDetailRef = useRef(false);
   type Item = { name: string; type: string; period: string; desc: string };
   const secondary = t("projects.secondary.items", { returnObjects: true }) as {
     name: string;
@@ -70,12 +104,31 @@ export function Projects() {
   const selectedDetail = selectedKey ? projectDetails[currentLanguage][selectedKey] : null;
 
   useEffect(() => {
+    const syncProjectFromHistory = () => {
+      const keyFromUrl = getProjectKeyFromLocation();
+      setSelectedKey(keyFromUrl);
+
+      if (!keyFromUrl) {
+        pushedDetailRef.current = false;
+      }
+    };
+
+    window.addEventListener("popstate", syncProjectFromHistory);
+    window.addEventListener("hashchange", syncProjectFromHistory);
+
+    return () => {
+      window.removeEventListener("popstate", syncProjectFromHistory);
+      window.removeEventListener("hashchange", syncProjectFromHistory);
+    };
+  }, []);
+
+  useEffect(() => {
     if (!selectedKey) return;
 
     const previousOverflow = document.body.style.overflow;
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setSelectedKey(null);
+        closeProject();
       }
     };
 
@@ -89,7 +142,34 @@ export function Projects() {
   }, [selectedKey]);
 
   const openProject = (key: ProjectKey) => {
+    if (typeof window !== "undefined") {
+      const nextHash = `${projectHashPrefix}${key}`;
+
+      if (window.location.hash !== nextHash) {
+        const nextUrl = new URL(window.location.href);
+        nextUrl.hash = nextHash;
+        pushedDetailRef.current = true;
+        window.history.pushState({ projectKey: key }, "", nextUrl);
+      }
+    }
+
     setSelectedKey(key);
+  };
+
+  const closeProject = () => {
+    if (typeof window !== "undefined" && getProjectKeyFromLocation()) {
+      if (pushedDetailRef.current) {
+        pushedDetailRef.current = false;
+        window.history.back();
+        return;
+      }
+
+      const nextUrl = new URL(window.location.href);
+      nextUrl.hash = "projects";
+      window.history.replaceState(null, "", nextUrl);
+    }
+
+    setSelectedKey(null);
   };
 
   const openProjectFromKeyboard = (event: React.KeyboardEvent<HTMLElement>, key: ProjectKey) => {
@@ -219,9 +299,10 @@ export function Projects() {
           link={projectLinks[selectedKey]}
           image={projectImages[selectedKey]}
           caseStudyLabel={t("projects.caseStudy")}
+          backLabel={t("projects.backToProjects")}
           closeLabel={t("projects.closeDetails")}
           visitLabel={t("projects.visit")}
-          onClose={() => setSelectedKey(null)}
+          onClose={closeProject}
         />
       )}
     </section>
@@ -233,6 +314,7 @@ function ProjectDetailDialog({
   link,
   image,
   caseStudyLabel,
+  backLabel,
   closeLabel,
   visitLabel,
   onClose,
@@ -241,6 +323,7 @@ function ProjectDetailDialog({
   link?: string;
   image?: { src: string; alt: string };
   caseStudyLabel: string;
+  backLabel: string;
   closeLabel: string;
   visitLabel: string;
   onClose: () => void;
@@ -258,6 +341,14 @@ function ProjectDetailDialog({
         onClick={(event) => event.stopPropagation()}
       >
         <header className="sticky top-0 z-10 border-b border-border bg-card/95 px-5 py-5 backdrop-blur sm:px-8">
+          <button
+            type="button"
+            onClick={onClose}
+            className="mb-4 inline-flex items-center gap-2 rounded-md border border-border bg-muted/60 px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            {backLabel}
+          </button>
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-primary">
@@ -384,8 +475,6 @@ function ProjectDetailSectionView({ section }: { section: ProjectDetailSection }
 }
 
 function ArchitectureFlow({ architecture }: { architecture: ProjectArchitecture }) {
-  const serviceIcons = [Bell, Mail, UploadCloud, QrCode];
-
   return (
     <div className="mt-5 rounded-xl border border-border bg-muted/40 p-4 sm:p-5">
       <div className="grid gap-4 lg:grid-cols-[1fr_auto_1fr_auto_0.8fr] lg:items-center">
@@ -397,7 +486,7 @@ function ArchitectureFlow({ architecture }: { architecture: ProjectArchitecture 
             {architecture.sources.map((source, index) => (
               <ArchitectureNode
                 key={source}
-                icon={index === 0 ? Laptop : Smartphone}
+                icon={getArchitectureSourceIcon(source, index)}
                 title={source}
                 compact
               />
@@ -432,7 +521,7 @@ function ArchitectureFlow({ architecture }: { architecture: ProjectArchitecture 
           {architecture.services.map((service, index) => (
             <ArchitectureNode
               key={service}
-              icon={serviceIcons[index] ?? CheckCircle2}
+              icon={getArchitectureServiceIcon(service, index)}
               title={service}
               compact
             />
@@ -441,6 +530,80 @@ function ArchitectureFlow({ architecture }: { architecture: ProjectArchitecture 
       </div>
     </div>
   );
+}
+
+function getArchitectureServiceIcon(service: string, index: number) {
+  const label = service.toLowerCase();
+
+  if (label.includes("firebase") || label.includes("notification") || label.includes("websocket")) {
+    return Bell;
+  }
+  if (
+    label.includes("iso") ||
+    label.includes("cb2a") ||
+    label.includes("cb6") ||
+    label.includes("paiement") ||
+    label.includes("payment")
+  ) {
+    return CreditCard;
+  }
+  if (label.includes("python") || label.includes("acquéreur") || label.includes("acquiring")) {
+    return Server;
+  }
+  if (label.includes("mongo")) {
+    return Database;
+  }
+  if (label.includes("smtp") || label.includes("email") || label.includes("mail")) {
+    return Mail;
+  }
+  if (label.includes("upload") || label.includes("fichier") || label.includes("file")) {
+    return UploadCloud;
+  }
+  if (label.includes("qr")) {
+    return QrCode;
+  }
+  if (label.includes("commande") || label.includes("order") || label.includes("statut")) {
+    return ShoppingCart;
+  }
+  if (label.includes("produit") || label.includes("product") || label.includes("cat")) {
+    return Package;
+  }
+  if (label.includes("jwt") || label.includes("rôle") || label.includes("role")) {
+    return ShieldCheck;
+  }
+  if (label.includes("https") || label.includes("encrypt")) {
+    return ShieldCheck;
+  }
+  if (label.includes("traefik") || label.includes("nginx") || label.includes("proxy")) {
+    return Server;
+  }
+  if (label.includes("docker")) {
+    return Package;
+  }
+  if (label.includes("dashboard") || label.includes("tableau")) {
+    return LayoutDashboard;
+  }
+
+  return [Bell, Mail, UploadCloud, QrCode][index] ?? CheckCircle2;
+}
+
+function getArchitectureSourceIcon(source: string, index: number) {
+  const label = source.toLowerCase();
+
+  if (
+    label.includes("postman") ||
+    label.includes("terminal") ||
+    label.includes("tpe") ||
+    label.includes("paiement") ||
+    label.includes("payment")
+  ) {
+    return CreditCard;
+  }
+  if (label.includes("android") || label.includes("mobile")) {
+    return Smartphone;
+  }
+
+  return index === 1 && label.includes("responsive") ? Smartphone : Laptop;
 }
 
 function ArchitectureArrow() {
