@@ -91,7 +91,7 @@ function DeferredSection({
         setActive(true);
         observer.disconnect();
       },
-      { rootMargin: "0px 0px", threshold: 0.01 },
+      { rootMargin: "720px 0px", threshold: 0.01 },
     );
 
     observer.observe(element);
