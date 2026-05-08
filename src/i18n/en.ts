@@ -8,7 +8,7 @@ export const en = {
     contact: "Contact",
   },
   hero: {
-    available: "Available for full-time in France",
+    available: "Available for employment in France",
     name: "Houssein GHANNOUM",
     title: "Full-Stack Java / React Developer",
     subtitle: "Software Engineer",
@@ -183,8 +183,8 @@ export const en = {
   },
   availability: {
     title: "Availability",
-    desc: "Available for a full-time role in Full-Stack Java / React development, with openness to Python Backend and Android Kotlin positions.",
-    highlights: ["Full-time", "Java / React / Python", "France · on-site or remote"],
+    desc: "Available for employment in Full-Stack Java / React development, open to different contract types such as permanent, fixed-term or other opportunities.",
+    highlights: ["Employment", "Permanent / fixed-term", "France · on-site or remote"],
   },
   contact: {
     title: "Contact",

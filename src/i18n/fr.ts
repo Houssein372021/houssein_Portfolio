@@ -8,7 +8,7 @@ export const fr = {
     contact: "Contact",
   },
   hero: {
-    available: "Disponible pour CDI en France",
+    available: "Disponible pour un emploi en France",
     name: "Houssein GHANNOUM",
     title: "Développeur Full-Stack Java / React",
     subtitle: "Ingénieur Logiciel",
@@ -183,8 +183,8 @@ export const fr = {
   },
   availability: {
     title: "Disponibilité",
-    desc: "Disponible pour un CDI en développement Full-Stack Java / React, avec ouverture aux postes Backend Python et Android Kotlin.",
-    highlights: ["CDI", "Java / React / Python", "France · présentiel ou remote"],
+    desc: "Disponible pour un emploi en développement Full-Stack Java / React, ouvert aux différents types de contrat comme CDI, CDD ou autres opportunités.",
+    highlights: ["Emploi", "CDI / CDD", "France · présentiel ou remote"],
   },
   contact: {
     title: "Contact",
