@@ -1,4 +1,4 @@
-import { useTranslation } from "@/i18n/sections";
+import { useTranslation } from "@/i18n";
 import { Mail, Linkedin, Phone, MessageCircle, Download, Github } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { contactInfo } from "@/data/contact";

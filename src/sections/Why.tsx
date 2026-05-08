@@ -1,4 +1,4 @@
-import { useTranslation } from "@/i18n/sections";
+import { useTranslation } from "@/i18n";
 import {
   Rocket,
   Layers,

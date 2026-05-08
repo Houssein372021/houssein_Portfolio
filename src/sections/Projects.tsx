@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useTranslation } from "@/i18n/sections";
+import { useTranslation } from "@/i18n";
 import {
   ArrowLeft,
   ArrowRight,

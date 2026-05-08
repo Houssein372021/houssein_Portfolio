@@ -16,7 +16,6 @@ function loadStylesheet(href: string) {
     );
 
     if (existing) {
-      existing.media = "all";
       resolve();
       return;
     }
@@ -24,11 +23,7 @@ function loadStylesheet(href: string) {
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href = href;
-    link.media = "print";
-    link.onload = () => {
-      link.media = "all";
-      resolve();
-    };
+    link.onload = () => resolve();
     link.onerror = () => resolve();
     document.head.appendChild(link);
   });
