@@ -81,6 +81,10 @@ export const en = {
     title: "Projects",
     subtitle: "Selected work shipped to production",
     visit: "View project",
+    detailsCta: "View details",
+    openDetails: "Open project details",
+    caseStudy: "Case study",
+    closeDetails: "Close details",
     featured: "Featured",
     items: {
       orderhub: {
@@ -96,10 +100,10 @@ export const en = {
         desc: "Full-stack web app with dynamic menu, automated email reservation system and admin dashboard. Spring Boot backend, PostgreSQL database, Dockerized VPS deployment.",
       },
       sezaia: {
-        name: "SEZAIA After-Sales Solution",
-        type: "Mobile + web business app",
-        period: "2024 – 2025",
-        desc: "Professional solution for customer issue management with Android Kotlin app, React web interface, Flask REST API, MySQL database and unique QR code system.",
+        name: "AssistByScan",
+        type: "QR code maintenance SaaS platform",
+        period: "10/2024 - 09/2025",
+        desc: "Multi-tenant SaaS platform built at Sezaia to digitize maintenance operations with QR codes, a React web interface, a Flask/MySQL backend and an Android Kotlin mobile app.",
       },
       caashpay: {
         name: "CAASHPAY Payment API",

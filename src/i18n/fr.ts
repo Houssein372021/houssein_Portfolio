@@ -81,6 +81,10 @@ export const fr = {
     title: "Projets",
     subtitle: "Sélection de réalisations en production",
     visit: "Voir le projet",
+    detailsCta: "Voir le détail",
+    openDetails: "Ouvrir le détail du projet",
+    caseStudy: "Étude de cas",
+    closeDetails: "Fermer le détail",
     featured: "À la une",
     items: {
       orderhub: {
@@ -96,10 +100,10 @@ export const fr = {
         desc: "Application web full-stack avec menu dynamique, système de réservation automatisé par email et tableau de bord administrateur. Backend Spring Boot, base PostgreSQL, déploiement Docker sur VPS.",
       },
       sezaia: {
-        name: "Solution SAV SEZAIA",
-        type: "Application métier mobile + web",
-        period: "2024 – 2025",
-        desc: "Solution professionnelle pour la gestion des incidents clients avec application Android Kotlin, interface web React, API REST Flask, base MySQL et système de QR codes uniques.",
+        name: "AssistByScan",
+        type: "Plateforme SaaS de maintenance par QR code",
+        period: "10/2024 - 09/2025",
+        desc: "Plateforme SaaS multi-tenant réalisée chez Sezaia pour digitaliser les opérations de maintenance avec QR codes, interface web React, backend Flask/MySQL et application mobile Android Kotlin.",
       },
       caashpay: {
         name: "API de paiement CAASHPAY",
