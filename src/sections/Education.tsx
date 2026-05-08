@@ -1,4 +1,4 @@
-import { useTranslation } from "@/i18n";
+import { useTranslation } from "@/i18n/sections";
 import { GraduationCap, MapPin, Calendar, ExternalLink } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { withBasePath } from "@/lib/public-path";
