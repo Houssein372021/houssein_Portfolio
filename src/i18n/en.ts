@@ -90,9 +90,9 @@ export const en = {
     items: {
       orderhubly: {
         name: "OrderHubly",
-        type: "Order management platform",
+        type: "Order management platform and public storefront",
         period: "04/2026 – present",
-        desc: "Full-stack platform for restaurants, snack bars and food businesses to centralize orders, statuses, products, users and dashboards. React, Spring Boot, PostgreSQL and Docker architecture.",
+        desc: "Full-stack platform to centralize orders received through Instagram, WhatsApp, Facebook, TikTok or a public storefront, with customers, products, payments, delivery tracking, statistics, QR code and PDF.",
       },
       beyrouthine: {
         name: "La Beyrouthine",

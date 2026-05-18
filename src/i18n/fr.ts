@@ -90,9 +90,9 @@ export const fr = {
     items: {
       orderhubly: {
         name: "OrderHubly",
-        type: "Plateforme de gestion de commandes",
+        type: "Plateforme de gestion de commandes et boutique publique",
         period: "04/2026 – aujourd'hui",
-        desc: "Plateforme full-stack destinée aux restaurants, snacks et commerces alimentaires pour centraliser les commandes, statuts, produits, utilisateurs et tableaux de bord. Architecture React, Spring Boot, PostgreSQL et Docker.",
+        desc: "Plateforme full-stack pour centraliser les commandes reçues via Instagram, WhatsApp, Facebook, TikTok ou boutique publique, avec clients, produits, paiements, livraisons, statistiques, QR code et PDF.",
       },
       beyrouthine: {
         name: "La Beyrouthine",
