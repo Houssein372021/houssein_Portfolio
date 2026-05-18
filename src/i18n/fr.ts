@@ -88,8 +88,8 @@ export const fr = {
     closeDetails: "Fermer le détail",
     featured: "À la une",
     items: {
-      orderhub: {
-        name: "OrderHub",
+      orderhubly: {
+        name: "OrderHubly",
         type: "Plateforme de gestion de commandes",
         period: "04/2026 – aujourd'hui",
         desc: "Plateforme full-stack destinée aux restaurants, snacks et commerces alimentaires pour centraliser les commandes, statuts, produits, utilisateurs et tableaux de bord. Architecture React, Spring Boot, PostgreSQL et Docker.",

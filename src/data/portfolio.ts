@@ -1,4 +1,4 @@
-export const projectKeys = ["orderhub", "beyrouthine", "sezaia", "caashpay"] as const;
+export const projectKeys = ["orderhubly", "beyrouthine", "sezaia", "caashpay"] as const;
 export type ProjectKey = (typeof projectKeys)[number];
 
 export const skills = {
@@ -17,14 +17,14 @@ export const experienceTechs = [
 ];
 
 export const projectTechs: Record<ProjectKey, string[]> = {
-  orderhub: ["React", "Spring Boot", "PostgreSQL", "Docker", "JWT"],
+  orderhubly: ["React", "Spring Boot", "PostgreSQL", "Docker", "JWT"],
   beyrouthine: ["React", "Spring Boot", "PostgreSQL", "Docker", "Traefik"],
   sezaia: ["Python", "Kotlin", "React", "MySQL", "Flask", "Git", "IONOS"],
   caashpay: ["Java", "Python", "MongoDB", "ISO8583", "PCI-DSS", "Git"],
 };
 
 export const projectLinks: Partial<Record<ProjectKey, string>> = {
-  orderhub: "https://orderhubly.com",
+  orderhubly: "https://orderhubly.com",
   beyrouthine: "https://labeiruthine.fr/",
   sezaia: "https://assistbyscan.com",
 };
@@ -70,13 +70,13 @@ export type ProjectDetail = {
 };
 
 const compactProjectDetailsFr: Record<Exclude<ProjectKey, "sezaia">, ProjectDetail> = {
-  orderhub: {
+  orderhubly: {
     eyebrow: "Projet personnel",
-    title: "OrderHub",
+    title: "OrderHubly",
     subtitle: "Plateforme de gestion de commandes",
     intro: [
       "Développement d'une plateforme full-stack de gestion de commandes destinée aux restaurants, snacks, commerces alimentaires ou services de vente en ligne.",
-      "OrderHub permet de centraliser la prise de commande, le suivi des statuts, la gestion des produits, des utilisateurs et des tableaux de bord, à travers une interface moderne et responsive.",
+      "OrderHubly permet de centraliser la prise de commande, le suivi des statuts, la gestion des produits, des utilisateurs et des tableaux de bord, à travers une interface moderne et responsive.",
       "L'application repose sur une architecture modulaire avec un frontend React, un backend Spring Boot, une base de données PostgreSQL et un déploiement Dockerisé. Le projet met l'accent sur la fluidité de l'expérience utilisateur, la maintenabilité du code et l'évolutivité technique.",
     ],
     technologies: [
@@ -95,9 +95,9 @@ const compactProjectDetailsFr: Record<Exclude<ProjectKey, "sezaia">, ProjectDeta
       {
         title: "Contexte et enjeux",
         body: [
-          "Dans un contexte où les restaurants, snacks et commerces ont besoin d'outils simples pour gérer leurs commandes en temps réel, OrderHub vise à proposer une solution centralisée, intuitive et performante.",
+          "Dans un contexte où les restaurants, snacks et commerces ont besoin d'outils simples pour gérer leurs commandes en temps réel, OrderHubly vise à proposer une solution centralisée, intuitive et performante.",
           "Les systèmes traditionnels de gestion de commandes peuvent être coûteux, peu flexibles ou mal adaptés aux petites structures. L'enjeu principal du projet était donc de créer une plateforme accessible pour gérer efficacement les produits, les commandes, les statuts de préparation, les utilisateurs et le suivi global de l'activité.",
-          "OrderHub répond à ce besoin en proposant une interface claire, une architecture robuste et une organisation modulaire facilitant les évolutions futures.",
+          "OrderHubly répond à ce besoin en proposant une interface claire, une architecture robuste et une organisation modulaire facilitant les évolutions futures.",
         ],
       },
       {
@@ -201,7 +201,7 @@ const compactProjectDetailsFr: Record<Exclude<ProjectKey, "sezaia">, ProjectDeta
           },
           {
             title: "2. Gestion des commandes",
-            body: "OrderHub permet de suivre chaque commande depuis sa création jusqu'à sa finalisation, afin de fluidifier l'organisation entre prise de commande, préparation et livraison.",
+            body: "OrderHubly permet de suivre chaque commande depuis sa création jusqu'à sa finalisation, afin de fluidifier l'organisation entre prise de commande, préparation et livraison.",
             items: [
               "Création d'une commande.",
               "Affichage de la liste des commandes.",
@@ -293,7 +293,7 @@ const compactProjectDetailsFr: Record<Exclude<ProjectKey, "sezaia">, ProjectDeta
       {
         title: "Conclusion",
         body: [
-          "OrderHub est une plateforme complète de gestion de commandes qui combine une interface moderne, une architecture backend robuste et une base de données relationnelle structurée.",
+          "OrderHubly est une plateforme complète de gestion de commandes qui combine une interface moderne, une architecture backend robuste et une base de données relationnelle structurée.",
           "Le projet constitue une base solide pour une solution professionnelle de gestion de commandes, pouvant évoluer vers une plateforme SaaS destinée aux restaurants, commerces ou services de livraison.",
         ],
         items: [
@@ -1061,13 +1061,13 @@ const compactProjectDetailsFr: Record<Exclude<ProjectKey, "sezaia">, ProjectDeta
 };
 
 const compactProjectDetailsEn: Record<Exclude<ProjectKey, "sezaia">, ProjectDetail> = {
-  orderhub: {
+  orderhubly: {
     eyebrow: "Personal project",
-    title: "OrderHub",
+    title: "OrderHubly",
     subtitle: "Order management platform",
     intro: [
       "Development of a full-stack order management platform for restaurants, snack bars, food businesses and online sales services.",
-      "OrderHub centralizes order taking, status tracking, product management, users and dashboards through a modern responsive interface.",
+      "OrderHubly centralizes order taking, status tracking, product management, users and dashboards through a modern responsive interface.",
       "The application is based on a modular architecture with a React frontend, a Spring Boot backend, a PostgreSQL database and Dockerized deployment. The project focuses on user experience fluidity, code maintainability and technical scalability.",
     ],
     technologies: [
@@ -1086,9 +1086,9 @@ const compactProjectDetailsEn: Record<Exclude<ProjectKey, "sezaia">, ProjectDeta
       {
         title: "Context and challenges",
         body: [
-          "Restaurants, snack bars and small businesses need simple tools to manage orders in real time. OrderHub aims to provide a centralized, intuitive and efficient solution.",
+          "Restaurants, snack bars and small businesses need simple tools to manage orders in real time. OrderHubly aims to provide a centralized, intuitive and efficient solution.",
           "Traditional order management systems can be expensive, inflexible or poorly adapted to small structures. The main challenge was to create an accessible platform to manage products, customer orders, preparation statuses, users and overall activity tracking.",
-          "OrderHub addresses this need with a clear interface, robust architecture and modular organization that makes future evolution easier.",
+          "OrderHubly addresses this need with a clear interface, robust architecture and modular organization that makes future evolution easier.",
         ],
       },
       {
@@ -1192,7 +1192,7 @@ const compactProjectDetailsEn: Record<Exclude<ProjectKey, "sezaia">, ProjectDeta
           },
           {
             title: "2. Order management",
-            body: "OrderHub tracks each order from creation to completion, improving coordination between order taking, preparation and delivery.",
+            body: "OrderHubly tracks each order from creation to completion, improving coordination between order taking, preparation and delivery.",
             items: [
               "Order creation.",
               "Order list display.",
@@ -1284,7 +1284,7 @@ const compactProjectDetailsEn: Record<Exclude<ProjectKey, "sezaia">, ProjectDeta
       {
         title: "Conclusion",
         body: [
-          "OrderHub is a complete order management platform combining a modern interface, a robust backend architecture and a structured relational database.",
+          "OrderHubly is a complete order management platform combining a modern interface, a robust backend architecture and a structured relational database.",
           "The project is a solid foundation for a professional order management solution that can evolve into a SaaS platform for restaurants, shops or delivery services.",
         ],
         items: [

@@ -36,7 +36,7 @@ import {
   type ProjectDetailSection,
   type ProjectKey,
 } from "@/data/portfolio";
-import orderHubLogo from "@/assets/projects/logo_orderhub_banner.webp";
+import orderHublyLogo from "@/assets/projects/logo_orderhubly.png";
 import laBeiruthineLogo from "@/assets/projects/logo_labeiruthine_banner.webp";
 import assistByScanLogo from "@/assets/projects/assistbyscan_qr_logo.svg";
 import caashpayLogo from "@/assets/companies/caashpay.svg";
@@ -52,8 +52,8 @@ function getProjectKeyFromLocation(): ProjectKey | null {
 }
 
 const projectLogos: Partial<Record<ProjectKey, { src: string; className: string }>> = {
-  orderhub: {
-    src: orderHubLogo,
+  orderhubly: {
+    src: orderHublyLogo,
     className: "object-contain",
   },
   beyrouthine: {
@@ -71,9 +71,9 @@ const projectLogos: Partial<Record<ProjectKey, { src: string; className: string 
 };
 
 const projectImages: Partial<Record<ProjectKey, { src: string; alt: string }>> = {
-  orderhub: {
-    src: orderHubLogo,
-    alt: "OrderHub project logo",
+  orderhubly: {
+    src: orderHublyLogo,
+    alt: "OrderHubly project logo",
   },
   beyrouthine: {
     src: laBeiruthineLogo,

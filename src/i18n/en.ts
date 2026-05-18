@@ -88,8 +88,8 @@ export const en = {
     closeDetails: "Close details",
     featured: "Featured",
     items: {
-      orderhub: {
-        name: "OrderHub",
+      orderhubly: {
+        name: "OrderHubly",
         type: "Order management platform",
         period: "04/2026 – present",
         desc: "Full-stack platform for restaurants, snack bars and food businesses to centralize orders, statuses, products, users and dashboards. React, Spring Boot, PostgreSQL and Docker architecture.",
