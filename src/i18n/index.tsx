@@ -63,21 +63,25 @@ export function useTranslation() {
     throw new Error("useTranslation must be used inside I18nProvider");
   }
 
-  const t = (key: string, options?: TranslationOptions) => {
-    const value = resolveTranslation(context.language, key);
+  const currentContext = context;
+
+  function t(key: string): string;
+  function t(key: string, options: { returnObjects: true }): unknown;
+  function t(key: string, options?: TranslationOptions): string | unknown {
+    const value = resolveTranslation(currentContext.language, key);
 
     if (options?.returnObjects) {
       return value ?? key;
     }
 
     return typeof value === "string" ? value : key;
-  };
+  }
 
   return {
     t,
     i18n: {
-      language: context.language,
-      changeLanguage: context.changeLanguage,
+      language: currentContext.language,
+      changeLanguage: currentContext.changeLanguage,
     },
   };
 }

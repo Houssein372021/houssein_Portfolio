@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
+import { seo } from "@/data/seo";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -26,13 +27,24 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Houssein GHANNOUM — Portfolio" },
-      { name: "description", content: "Développeur Full-Stack Java / React — Ingénieur Logiciel" },
-      { name: "author", content: "Houssein GHANNOUM" },
+      { title: seo.title },
+      { name: "description", content: seo.description },
+      { name: "author", content: seo.author },
+      { name: "theme-color", content: "#0f172a" },
+      { name: "color-scheme", content: "light" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", type: "image/png", href: "/hg-logo-192.png" },
+      { rel: "shortcut icon", href: "/hg-logo-192.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/avatar-portfolio.webp",
+        type: "image/webp",
+        fetchPriority: "high",
+      },
     ],
   }),
   shellComponent: RootShell,
