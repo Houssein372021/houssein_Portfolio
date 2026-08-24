@@ -12,7 +12,7 @@ export const skills = {
 };
 
 export const experienceTechs = [
-  ["Python", "Kotlin", "React", "MySQL", "Flask", "Git", "IONOS"],
+  ["Python", "Kotlin", "React", "MySQL", "Flask", "IONOS"],
   ["Java", "Python", "MongoDB", "ISO8583", "PCI-DSS", "Git"],
 ];
 

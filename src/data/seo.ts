@@ -5,9 +5,9 @@ export const siteUrl = "https://houssein-ghannoum.vercel.app";
 export const seo = {
   url: siteUrl,
   siteName: "Portfolio Houssein GHANNOUM",
-  title: "Houssein GHANNOUM | Développeur Full-Stack Java / React en France",
+  title: "Houssein GHANNOUM | Ingénieur Logiciel Généraliste en France",
   description:
-    "Portfolio de Houssein GHANNOUM, développeur Full-Stack Java / React et ingénieur logiciel en France. Projets React, Spring Boot, Python, Docker, CI/CD et applications SaaS.",
+    "Portfolio de Houssein GHANNOUM, ingénieur logiciel généraliste avec une expertise Full-Stack Java / React en France. Projets React, Spring Boot, Python, Docker, CI/CD et applications SaaS.",
   author: "Houssein GHANNOUM",
   image: `${siteUrl}/avatar-portfolio.webp`,
   locale: "fr_FR",
@@ -15,6 +15,7 @@ export const seo = {
   keywords: [
     "Houssein GHANNOUM",
     "Houssein Ghannoum portfolio",
+    "ingénieur logiciel généraliste",
     "développeur full-stack Java React",
     "ingénieur logiciel France",
     "développeur Spring Boot React",
@@ -36,7 +37,7 @@ export const structuredData = {
       name: seo.author,
       url: siteUrl,
       image: seo.image,
-      jobTitle: ["Développeur Full-Stack Java / React", "Ingénieur logiciel"],
+      jobTitle: ["Ingénieur Logiciel Généraliste", "Développeur Full-Stack Java / React"],
       description: seo.description,
       email: `mailto:${contactInfo.email}`,
       telephone: contactInfo.phone,

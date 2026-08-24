@@ -9,6 +9,7 @@ const heroDelay = (delay: string) => ({ "--hero-delay": delay }) as CSSPropertie
 export function Hero() {
   const { t, i18n } = useTranslation();
   const avatar = withBasePath("/avatar-portfolio.webp");
+  const heroSubtitle = t("hero.subtitle");
   const cvHref = withBasePath(
     i18n.language === "en" ? "/cv/Houssein_Ghannoum_CV_EN.pdf" : "/cv/Houssein_Ghannoum_CV_FR.pdf",
   );
@@ -46,7 +47,9 @@ export function Hero() {
           >
             {t("hero.title")}
           </div>
-          <p className="mt-2 text-lg text-muted-foreground font-medium">{t("hero.subtitle")}</p>
+          {heroSubtitle ? (
+            <p className="mt-2 text-lg text-muted-foreground font-medium">{heroSubtitle}</p>
+          ) : null}
 
           <p
             style={heroDelay("0.28s")}

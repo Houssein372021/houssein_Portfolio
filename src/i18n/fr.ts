@@ -10,8 +10,8 @@ export const fr = {
   hero: {
     available: "Disponible pour un emploi en France",
     name: "Houssein GHANNOUM",
-    title: "Développeur Full-Stack Java / React",
-    subtitle: "Ingénieur Logiciel",
+    title: "Ingénieur Logiciel Généraliste",
+    subtitle: "",
     tagline1:
       "Développeur Full-Stack Java / React passionné par la création d'applications web modernes, robustes et déployées en production.",
     tagline2:
@@ -56,11 +56,9 @@ export const fr = {
         period: "10/2024 – 09/2025",
         location: "Brest, France",
         bullets: [
-          "Développement d’une solution SAV complète comprenant une application Android (Kotlin) et une interface web React pour la gestion des incidents clients.",
-          "Conception et développement d’une API REST avec Flask (Python) connectée à une base MySQL.",
-          "Implémentation d’un système de QR codes uniques permettant l’identification des produits et le suivi des incidents.",
-          "Déploiement de l’application (frontend, API, base de données) sur un serveur IONOS avec configuration de l’infrastructure.",
-          "Collaboration avec les équipes métiers pour améliorer les processus de suivi client.",
+          "Chaîne IoT de bout en bout (QR codes uniques) pour capter et tracer l'information terrain en temps réel.",
+          "API REST Flask/Python centralisant les données multi-sources (Android Kotlin + web React) dans MySQL.",
+          "Déploiement et administration de l'infrastructure complète sur VPS IONOS (API, BDD, frontend).",
         ],
       },
       {
