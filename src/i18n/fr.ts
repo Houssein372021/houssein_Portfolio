@@ -16,8 +16,7 @@ export const fr = {
       "Développeur Full-Stack Java / React passionné par la création d'applications web modernes, robustes et déployées en production.",
     tagline2:
       "Ingénieur logiciel junior spécialisé en Java Spring Boot, React et Python, avec une expérience concrète en API REST, Docker, CI/CD et déploiement VPS.",
-    cta: { projects: "Voir mes projets", cv: "Télécharger mon CV", contact: "Me contacter" },
-    badge: "Ingénieur Full-Stack",
+    cta: { projects: "Voir mes projets", contact: "Me contacter" },
   },
   about: {
     title: "À propos",
@@ -191,8 +190,6 @@ export const fr = {
     linkedin: "Me contacter sur LinkedIn",
     call: "Appeler",
     whatsapp: "WhatsApp",
-    cvFr: "CV en français",
-    cvEn: "Resume in English",
   },
   footer: {
     rights: "Tous droits réservés.",

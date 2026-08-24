@@ -1,18 +1,15 @@
 import { useTranslation } from "@/i18n";
 import type { CSSProperties } from "react";
-import { ArrowRight, Download, Mail, Github, Linkedin, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, Mail, Github, Linkedin, MapPin } from "lucide-react";
 import { contactInfo } from "@/data/contact";
 import { withBasePath } from "@/lib/public-path";
 
 const heroDelay = (delay: string) => ({ "--hero-delay": delay }) as CSSProperties;
 
 export function Hero() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const avatar = withBasePath("/avatar-portfolio.webp");
   const heroSubtitle = t("hero.subtitle");
-  const cvHref = withBasePath(
-    i18n.language === "en" ? "/cv/Houssein_Ghannoum_CV_EN.pdf" : "/cv/Houssein_Ghannoum_CV_FR.pdf",
-  );
 
   return (
     <section
@@ -66,13 +63,6 @@ export function Hero() {
               {t("hero.cta.projects")} <ArrowRight className="w-4 h-4 rtl:rotate-180" />
             </a>
             <a
-              href={cvHref}
-              download
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-border bg-card hover:border-primary transition-colors font-medium"
-            >
-              <Download className="w-4 h-4" /> {t("hero.cta.cv")}
-            </a>
-            <a
               href="#contact"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-lg hover:bg-muted transition-colors font-medium"
             >
@@ -120,15 +110,6 @@ export function Hero() {
               decoding="async"
               className="w-full h-full object-cover object-center"
             />
-          </div>
-          <div
-            style={heroDelay("0.62s")}
-            className="hero-enter absolute -bottom-4 -end-4 glass border border-border rounded-2xl px-4 py-3 shadow-card-premium"
-          >
-            <div className="flex items-center gap-2 text-sm font-medium">
-              <Sparkles className="w-4 h-4 text-accent animate-pulse" />
-              {t("hero.badge")}
-            </div>
           </div>
         </div>
       </div>

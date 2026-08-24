@@ -1,8 +1,7 @@
 import { useTranslation } from "@/i18n";
-import { Mail, Linkedin, Phone, MessageCircle, Download, Github } from "lucide-react";
+import { Mail, Linkedin, Phone, MessageCircle, Github } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { contactInfo } from "@/data/contact";
-import { withBasePath } from "@/lib/public-path";
 
 export function Contact() {
   const { t } = useTranslation();
@@ -60,20 +59,6 @@ export function Contact() {
 
         <Reveal delay={0.2}>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href={withBasePath("/cv/Houssein_Ghannoum_CV_FR.pdf")}
-              download
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-border bg-card hover:border-primary transition-colors text-sm font-medium"
-            >
-              <Download className="w-4 h-4" /> {t("contact.cvFr")}
-            </a>
-            <a
-              href={withBasePath("/cv/Houssein_Ghannoum_CV_EN.pdf")}
-              download
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-border bg-card hover:border-primary transition-colors text-sm font-medium"
-            >
-              <Download className="w-4 h-4" /> {t("contact.cvEn")}
-            </a>
             <a
               href={contactInfo.github}
               target="_blank"
